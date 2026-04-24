@@ -86,12 +86,6 @@ The software layer that allows multiple virtual machines to run on a physical ho
 
 Related: [Virtualization](#virtualization), [IaaS](#iaas)
 
-## Hyper-V
-
-Microsoft's Windows-based virtualization platform for creating and managing virtual machines.
-
-Related: [Virtual Machine](#virtual-machine), [Virtual Switch](#virtual-switch), [Virtualization](#virtualization)
-
 ## IaaS
 
 Infrastructure as a Service. A cloud model where the provider offers infrastructure building blocks such as virtual machines, storage, networking, and firewalls.
@@ -104,12 +98,6 @@ Microsoft's cloud-based endpoint management service for managing devices, applic
 
 Related: [Microsoft 365](#microsoft-365), [Microsoft Entra ID](#microsoft-entra-id)
 
-## ISO Image
-
-A disk image file used as installation media for operating systems or software.
-
-Related: [Virtual Machine](#virtual-machine), [Windows Server](#windows-server), [Windows Client](#windows-client)
-
 ## Kerberos
 
 The primary modern authentication protocol used in Active Directory domains.
@@ -121,12 +109,6 @@ Related: [Active Directory Domain Services](#active-directory-domain-services), 
 Lightweight Directory Access Protocol. A protocol used by applications and services to query and access directory data.
 
 Related: [Directory](#directory), [Active Directory Domain Services](#active-directory-domain-services)
-
-## Large Send Offload
-
-A network adapter performance feature that lets the adapter handle segmentation of large packets. In some Hyper-V lab setups, disabling Large Send Offload v2 can help resolve slow or unstable networking.
-
-Related: [Hyper-V](#hyper-v), [Virtual Switch](#virtual-switch)
 
 ## Microsoft 365
 
@@ -164,12 +146,6 @@ Remote Access Service / Routing and Remote Access Service. Microsoft remote acce
 
 Related: [VPN](#vpn), [Firewall](#firewall)
 
-## Server Manager
-
-Windows Server management console used to configure local server settings, install roles and features, and launch common administrative tools.
-
-Related: [Windows Server](#windows-server), [Active Directory Domain Services](#active-directory-domain-services)
-
 ## SaaS
 
 Software as a Service. A cloud model where users consume a finished application without managing the underlying infrastructure or platform.
@@ -182,18 +158,6 @@ A dedicated Microsoft cloud directory instance for an organization. A tenant con
 
 Related: [Directory](#directory), [Microsoft Entra ID](#microsoft-entra-id), [Microsoft 365](#microsoft-365)
 
-## Virtual Machine
-
-A software-based computer that runs an operating system on virtualized hardware provided by a hypervisor.
-
-Related: [Hyper-V](#hyper-v), [Virtualization](#virtualization), [Hypervisor](#hypervisor)
-
-## Virtual Switch
-
-A software-based network switch that connects virtual machines to each other, the host, or an external physical network.
-
-Related: [Hyper-V](#hyper-v), [Virtual Machine](#virtual-machine), [VPN](#vpn)
-
 ## Virtualization
 
 The abstraction of physical compute resources so multiple virtual machines can run on shared hardware.
@@ -205,18 +169,6 @@ Related: [Hypervisor](#hypervisor), [IaaS](#iaas)
 Virtual Private Network. An encrypted connection that allows remote users or networks to access private resources more securely.
 
 Related: [RAS/RRAS](#rasrras), [Firewall](#firewall), [DMZ](#dmz)
-
-## Windows Client
-
-A Windows desktop operating system used by end users, such as Windows 10 or Windows 11.
-
-Related: [Domain](#domain), [Active Directory Domain Services](#active-directory-domain-services), [Virtual Machine](#virtual-machine)
-
-## Windows Server
-
-Microsoft's server operating system used for infrastructure roles such as AD DS, DNS, file services, and other enterprise workloads.
-
-Related: [Server Manager](#server-manager), [Active Directory Domain Services](#active-directory-domain-services), [Domain Controller](#domain-controller)
 
 ## Domain Join
 
@@ -259,48 +211,6 @@ Related: [Domain Controller](#domain-controller), [Group Policy Object](#group-p
 A DNS record type that helps clients locate services, including AD DS domain controllers.
 
 Related: [DNS](#dns), [Domain Controller](#domain-controller)
-
-## DHCP
-
-Dynamic Host Configuration Protocol. A network service that automatically assigns IP configuration to devices.
-
-Related: [DNS](#dns), [Windows Client](#windows-client)
-
-## Checkpoint
-
-A saved state of a virtual machine that can be used to roll back to an earlier point in time.
-
-Related: [Hyper-V](#hyper-v), [Virtual Machine](#virtual-machine)
-
-## Dynamic Memory
-
-A Hyper-V feature that can adjust a virtual machine's memory allocation while it runs.
-
-Related: [Hyper-V](#hyper-v), [Virtual Machine](#virtual-machine)
-
-## IPv4
-
-The widely used Internet Protocol version that represents addresses in dotted-decimal format, such as `192.0.2.10`.
-
-Related: [DNS](#dns), [DHCP](#dhcp)
-
-## IPv6
-
-The newer Internet Protocol version designed with a much larger address space than IPv4.
-
-Related: [IPv4](#ipv4), [DNS](#dns)
-
-## Loopback Address
-
-An address that points a computer back to itself. In IPv4, `127.0.0.1` is the common loopback address.
-
-Related: [DNS](#dns), [Domain Controller](#domain-controller)
-
-## Trusted Platform Module
-
-A hardware or virtual security component used to protect cryptographic material and support security features such as Windows 11 requirements.
-
-Related: [Windows Client](#windows-client), [Virtual Machine](#virtual-machine)
 
 ## App Registration
 

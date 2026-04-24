@@ -9,7 +9,7 @@ Section 2 explains how to build a small practice lab for Active Directory and hy
 
 ### Core idea
 
-The practice lab gives you a safe place to work with [virtual machines](../00-front-matter/glossary.md#virtual-machine), [Windows Server](../00-front-matter/glossary.md#windows-server), [Active Directory Domain Services](../00-front-matter/glossary.md#active-directory-domain-services), and Microsoft Entra synchronization concepts before touching any real environment.
+The practice lab gives you a safe place to work with virtual machines, Windows Server, [Active Directory Domain Services](../00-front-matter/glossary.md#active-directory-domain-services), and Microsoft Entra synchronization concepts before touching any real environment.
 
 ### What to know
 
@@ -35,7 +35,7 @@ The practice lab gives you a safe place to work with [virtual machines](../00-fr
 
 ### Core idea
 
-A Windows Server [ISO](../00-front-matter/glossary.md#iso-image) is the installation media used to create the server VM that will later become the domain controller.
+A Windows Server ISO is the installation media used to create the server VM that will later become the domain controller.
 
 ### What to know
 
@@ -55,7 +55,7 @@ When documenting your own lab later, record the server version, edition, and VM 
 
 ### Core idea
 
-[Hyper-V](../00-front-matter/glossary.md#hyper-v) is Microsoft’s built-in virtualization platform for running local virtual machines on supported Windows editions.
+Hyper-V is Microsoft’s built-in virtualization platform for running local virtual machines on supported Windows editions.
 
 ### What to know
 
@@ -82,7 +82,7 @@ When documenting your own lab later, record the server version, edition, and VM 
 
 ### Core idea
 
-A [virtual switch](../00-front-matter/glossary.md#virtual-switch) connects virtual machines to a network. For this lab, an external virtual switch lets the VMs reach the same outside network as the host computer.
+A virtual switch connects virtual machines to a network. For this lab, an external virtual switch lets the VMs reach the same outside network as the host computer.
 
 ### What to know
 
@@ -115,7 +115,7 @@ The Windows Server VM becomes the foundation of the on-premises side of the lab.
 - 4 GB of memory is a reasonable minimum for a small lab VM.
 - Connect the VM to the external virtual switch.
 - Install from the Windows Server ISO.
-- Disable [checkpoints](../00-front-matter/glossary.md#checkpoint) if you want a simpler lab state and fewer unexpected rollbacks.
+- Disable checkpoints if you want a simpler lab state and fewer unexpected rollbacks.
 
 ### Recommended lab settings
 
@@ -123,7 +123,7 @@ The Windows Server VM becomes the foundation of the on-premises side of the lab.
 |---|---|---|
 | Generation | Generation 2 | Modern firmware and security support |
 | Memory | 4096 MB | Enough for a basic GUI-based lab server |
-| [Dynamic Memory](../00-front-matter/glossary.md#dynamic-memory) | Off | Keeps memory behavior predictable while learning |
+| Dynamic Memory | Off | Keeps memory behavior predictable while learning |
 | Network | External virtual switch | Allows internet and lab network connectivity |
 | Disk | Default dynamic virtual disk | Fine for a temporary study lab |
 | Edition | Desktop Experience | Easier for beginner GUI-based setup |
@@ -135,7 +135,7 @@ The Windows Server VM becomes the foundation of the on-premises side of the lab.
 
 ### Core idea
 
-The Windows 11 ISO provides the installation media for the [Windows client](../00-front-matter/glossary.md#windows-client) VM. The client VM is used to test [domain join](../00-front-matter/glossary.md#domain-join), DNS configuration, and domain sign-in.
+The Windows 11 ISO provides the installation media for the Windows client VM. The client VM is used to test [domain join](../00-front-matter/glossary.md#domain-join), DNS configuration, and domain sign-in.
 
 ### What to know
 
@@ -157,7 +157,7 @@ The Windows 11 VM acts as the domain-joined client. It verifies whether the doma
 ### What to know
 
 - Use Generation 2 for modern Windows 11 VMs when supported.
-- Enable virtual [TPM](../00-front-matter/glossary.md#trusted-platform-module) for Windows 11 requirements.
+- Enable virtual TPM for Windows 11 requirements.
 - Assign at least two virtual processors.
 - Use 4 GB of memory or more for a smoother lab experience.
 - Connect the VM to the same virtual switch as the server VM.
@@ -180,7 +180,7 @@ The Windows 11 VM acts as the domain-joined client. It verifies whether the doma
 
 ### Core idea
 
-[Large Send Offload](../00-front-matter/glossary.md#large-send-offload) can sometimes cause slow or unreliable network behavior after enabling Hyper-V. Disabling Large Send Offload v2 on the host’s Hyper-V virtual Ethernet adapter can fix certain lab connectivity issues.
+Large Send Offload can sometimes cause slow or unreliable network behavior after enabling Hyper-V. Disabling Large Send Offload v2 on the host’s Hyper-V virtual Ethernet adapter can fix certain lab connectivity issues.
 
 ### What to know
 
@@ -209,8 +209,8 @@ The Windows Server VM becomes a domain controller after it is renamed, pointed t
 ### What to know
 
 - Rename the server before promotion so the domain controller has a clean, meaningful name.
-- Configure preferred DNS to the [loopback address](../00-front-matter/glossary.md#loopback-address) or the server’s own IP before promotion.
-- Install the AD DS role through [Server Manager](../00-front-matter/glossary.md#server-manager) or PowerShell.
+- Configure preferred DNS to the loopback address or the server’s own IP before promotion.
+- Install the AD DS role through Server Manager or PowerShell.
 - Promote the server to a domain controller and create a new forest for the lab.
 - Keep DNS and [Global Catalog](../00-front-matter/glossary.md#global-catalog) enabled for a basic first domain controller.
 - Use sanitized lab names in public notes instead of publishing real domains.
