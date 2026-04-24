@@ -1,0 +1,14 @@
+local-source-pdfs/
+source-notes/
+private-notes/
+raw-course-exports/
+private-screenshots/
+*.pdf
+*.docx
+*.pptx
+*.key
+*.pages
+*.zip
+.DS_Store
+.env
+.env.local

@@ -1,0 +1,1 @@
+# App Registrations Cheatsheet
