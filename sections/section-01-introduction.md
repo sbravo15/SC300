@@ -3,7 +3,7 @@
 Section 1 establishes the foundation for the rest of the SC-300 study guide. It introduces the Microsoft cloud environment, identity terminology, Active Directory fundamentals, remote access concepts, lab setup expectations, and the course workflow used for assignments and later documentation.
 
 > [!NOTE]
-> This is a foundation section. It introduces the cloud, identity, networking, lab setup, and course workflow concepts needed for later SC-300 topics.
+> This is a foundation section. It introduces the cloud, identity, networking, lab setup, and course workflow concepts needed for later SC-300 topics. Key terms link to the [SC-300 glossary](../00-front-matter/glossary.md) on first meaningful use.
 
 ## 1. Welcome Video
 
@@ -24,7 +24,7 @@ The opening lesson sets expectations for how to approach the SC-300 material. Th
 
 ### Core idea
 
-Microsoft cloud administration is built around several connected services. Azure provides cloud infrastructure and platform services, Microsoft 365 provides productivity and collaboration services, and Microsoft Entra ID provides the shared identity layer used by both.
+Microsoft cloud administration is built around several connected services. [Azure](../00-front-matter/glossary.md#azure) provides cloud infrastructure and platform services, [Microsoft 365](../00-front-matter/glossary.md#microsoft-365) provides productivity and collaboration services, and [Microsoft Entra ID](../00-front-matter/glossary.md#microsoft-entra-id) provides the shared identity layer used by both.
 
 ### What to know
 
@@ -47,7 +47,7 @@ Microsoft cloud administration is built around several connected services. Azure
 
 ### Core idea
 
-Modern Microsoft identity administration grew out of Active Directory Domain Services (AD DS). Even though SC-300 focuses on Microsoft Entra ID, many organizations still use AD DS on-premises and connect it to the cloud through hybrid identity.
+Modern Microsoft identity administration grew out of [Active Directory Domain Services](../00-front-matter/glossary.md#active-directory-domain-services) (AD DS). Even though SC-300 focuses on Microsoft Entra ID, many organizations still use AD DS on-premises and connect it to the cloud through [hybrid identity](../00-front-matter/glossary.md#hybrid-identity).
 
 ![Active Directory Domain Controllers diagram](../assets/diagrams/section-01/ad-domain-controllers.png)
 
@@ -58,11 +58,11 @@ Before centralized directory services, administrators often managed computers in
 ### What to know
 
 - AD DS stores enterprise identity and configuration data such as users, computers, groups, and policies.
-- A domain controller is a server that runs AD DS and stores a copy of the directory database.
-- Domains provide a logical boundary for centralized identity and device management.
+- A [domain controller](../00-front-matter/glossary.md#domain-controller) is a server that runs AD DS and stores a copy of the directory database.
+- [Domains](../00-front-matter/glossary.md#domain) provide a logical boundary for centralized identity and device management.
 - Multiple domain controllers improve redundancy, distribute authentication load, and replicate directory changes.
-- Kerberos is the primary modern AD authentication protocol; NTLM exists for legacy compatibility.
-- LDAP is used to query and access directory information.
+- [Kerberos](../00-front-matter/glossary.md#kerberos) is the primary modern AD authentication protocol; [NTLM](../00-front-matter/glossary.md#ntlm) exists for legacy compatibility.
+- [LDAP](../00-front-matter/glossary.md#ldap) is used to query and access directory information.
 
 ### Key concepts
 
@@ -87,11 +87,11 @@ Multiple domain controllers are deployed so the environment can survive failures
 
 ### DNS in Active Directory
 
-DNS is not optional in an Active Directory environment. Domain-joined systems rely on DNS to locate domain controllers and other internal services. If DNS is broken, authentication and service discovery can fail even if the domain controllers themselves are online.
+[DNS](../00-front-matter/glossary.md#dns) is not optional in an Active Directory environment. Domain-joined systems rely on DNS to locate domain controllers and other internal services. If DNS is broken, authentication and service discovery can fail even if the domain controllers themselves are online.
 
 ### Group Policy Objects
 
-Group Policy Objects allow administrators to enforce configuration at scale. Common examples include password rules, firewall settings, lock-screen behavior, software deployment, device restrictions, and other security baselines.
+[Group Policy Objects](../00-front-matter/glossary.md#group-policy-object) allow administrators to enforce configuration at scale. Common examples include password rules, firewall settings, lock-screen behavior, software deployment, device restrictions, and other security baselines.
 
 > [!WARNING]
 > Exam trap: In AD DS, authentication problems are often DNS problems first. If clients cannot locate domain controllers through DNS, domain sign-in and service discovery can break.
@@ -103,7 +103,7 @@ Group Policy Objects allow administrators to enforce configuration at scale. Com
 
 ### Core idea
 
-Traditional enterprise networks had to solve three major problems: secure remote access, safe exposure of public services, and efficient server hosting. RAS/VPN, DMZ designs, and virtualization were key steps toward the cloud models used today.
+Traditional enterprise networks had to solve three major problems: secure remote access, safe exposure of public services, and efficient server hosting. [RAS/VPN](../00-front-matter/glossary.md#rasrras), [DMZ](../00-front-matter/glossary.md#dmz) designs, and [virtualization](../00-front-matter/glossary.md#virtualization) were key steps toward the cloud models used today.
 
 ![DMZ, VPN, and firewall perimeter diagram](../assets/diagrams/section-01/dmz-vpn-firewall-perimeter.png)
 
@@ -120,11 +120,11 @@ Traditional enterprise networks had to solve three major problems: secure remote
 
 ### Remote access
 
-Remote users should not require many internal server ports to be opened directly to the internet. A VPN provides a safer model by allowing users to connect through an encrypted tunnel before reaching internal services such as file servers, databases, or collaboration systems.
+Remote users should not require many internal server ports to be opened directly to the internet. A [VPN](../00-front-matter/glossary.md#vpn) provides a safer model by allowing users to connect through an encrypted tunnel before reaching internal services such as file servers, databases, or collaboration systems.
 
 ### DMZ / perimeter network
 
-A DMZ is used when an organization needs to host a public-facing service, such as a web server. Instead of placing that server directly inside the internal network, the server is placed in a perimeter network where firewall rules can limit what it can reach.
+A DMZ is used when an organization needs to host a public-facing service, such as a web server. Instead of placing that server directly inside the internal network, the server is placed in a perimeter network where [firewall](../00-front-matter/glossary.md#firewall) rules can limit what it can reach.
 
 ### Virtualization
 
@@ -157,9 +157,9 @@ Microsoft cloud services build on the same ideas introduced by virtualization an
 
 | Model | Meaning | Microsoft-oriented example |
 |---|---|---|
-| IaaS | Infrastructure as a Service; cloud-hosted building blocks such as compute, storage, networking, and security components | Azure virtual machines, virtual networks, storage, load balancers, and firewalls |
-| PaaS | Platform as a Service; managed platforms that still require configuration and administration | Microsoft Entra ID, managed databases, app platforms, and identity controls |
-| SaaS | Software as a Service; finished applications users can access with minimal infrastructure management | Exchange Online, SharePoint Online, Teams, OneDrive for Business, Office for the web |
+| [IaaS](../00-front-matter/glossary.md#iaas) | Infrastructure as a Service; cloud-hosted building blocks such as compute, storage, networking, and security components | Azure virtual machines, virtual networks, storage, load balancers, and firewalls |
+| [PaaS](../00-front-matter/glossary.md#paas) | Platform as a Service; managed platforms that still require configuration and administration | Microsoft Entra ID, managed databases, app platforms, and identity controls |
+| [SaaS](../00-front-matter/glossary.md#saas) | Software as a Service; finished applications users can access with minimal infrastructure management | Exchange Online, SharePoint Online, Teams, OneDrive for Business, Office for the web |
 
 ### Azure vs Microsoft 365
 
@@ -175,7 +175,7 @@ Microsoft cloud services build on the same ideas introduced by virtualization an
 - SharePoint Online provides collaboration sites and document management.
 - Teams provides collaboration, chat, meetings, and integration with other services.
 - OneDrive for Business provides user-focused cloud file storage.
-- Intune provides cloud-based device and application management.
+- [Intune](../00-front-matter/glossary.md#intune) provides cloud-based device and application management.
 - Microsoft 365 Apps for enterprise provides Office applications licensed through Microsoft 365.
 
 ### Licensing models
@@ -207,7 +207,7 @@ New organizations may choose cloud-first identity and device management without 
 
 ### Core idea
 
-Azure Active Directory has been renamed Microsoft Entra ID. The product name changed, but many core identity concepts, licensing tiers, and administrative tasks remain recognizable.
+[Azure Active Directory](../00-front-matter/glossary.md#azure-active-directory) has been renamed Microsoft Entra ID. The product name changed, but many core identity concepts, licensing tiers, and administrative tasks remain recognizable.
 
 ### Key concepts
 
@@ -218,7 +218,7 @@ Azure Active Directory has been renamed Microsoft Entra ID. The product name cha
 | Azure AD tenant | Microsoft Entra tenant |
 | Azure AD Premium P1 | Microsoft Entra ID P1 |
 | Azure AD Premium P2 | Microsoft Entra ID P2 |
-| Azure AD Connect | Microsoft Entra Connect |
+| Azure AD Connect | [Microsoft Entra Connect](../00-front-matter/glossary.md#microsoft-entra-connect) |
 
 ### What to know
 
@@ -234,7 +234,7 @@ Azure Active Directory has been renamed Microsoft Entra ID. The product name cha
 
 ### Core idea
 
-A lab tenant is the safest place to practice Microsoft Entra ID and Microsoft 365 administration. Trial availability can vary by region and by Microsoft program changes, so lab setup may require flexibility.
+A lab [tenant](../00-front-matter/glossary.md#tenant) is the safest place to practice Microsoft Entra ID and Microsoft 365 administration. Trial availability can vary by region and by Microsoft program changes, so lab setup may require flexibility.
 
 ### What to know
 
