@@ -260,11 +260,59 @@ A Microsoft Entra governance process for periodically reviewing whether users, g
 
 Related: [Identity Governance](#identity-governance), [Entitlement Management](#entitlement-management)
 
+## Administrative Unit
+
+A Microsoft Entra container used to scope administrative control over selected users, groups, or devices.
+
+Related: [Microsoft Entra ID](#microsoft-entra-id), [Least Privilege](#least-privilege), [Effective Permissions](#effective-permissions)
+
+## Azure RBAC
+
+Azure role-based access control. The authorization system used to manage access to Azure resources at scopes such as management group, subscription, resource group, or resource.
+
+Related: [Role-Based Access Control](#role-based-access-control), [Azure](#azure), [Least Privilege](#least-privilege)
+
+## Company Branding
+
+Microsoft Entra sign-in page customization for organization logos, colors, layout, and sign-in text.
+
+Related: [Microsoft Entra ID](#microsoft-entra-id), [Tenant](#tenant)
+
+## Custom Domain
+
+A verified domain name owned by an organization and added to a Microsoft tenant for sign-in names, email, and cloud services.
+
+Related: [Tenant](#tenant), [DNS](#dns), [Microsoft Entra ID](#microsoft-entra-id)
+
+## Effective Permissions
+
+The actual actions an identity can perform after role permissions, scope, and assignments are evaluated together.
+
+Related: [Role-Based Access Control](#role-based-access-control), [Administrative Unit](#administrative-unit), [Least Privilege](#least-privilege)
+
 ## Role-Based Access Control
 
 An authorization model where permissions are assigned through roles rather than directly granting every permission to each user.
 
 Related: [Privileged Identity Management](#privileged-identity-management), [Microsoft Entra ID](#microsoft-entra-id)
+
+## Least Privilege
+
+A security principle that grants only the permissions required to perform a task, and no more.
+
+Related: [Role-Based Access Control](#role-based-access-control), [Privileged Identity Management](#privileged-identity-management), [Administrative Unit](#administrative-unit)
+
+## Restricted Administrative Unit
+
+An administrative unit that protects its members from management by broader tenant administrators unless those administrators are explicitly assigned to the restricted unit.
+
+Related: [Administrative Unit](#administrative-unit), [Microsoft Entra ID](#microsoft-entra-id)
+
+## Security Defaults
+
+Baseline Microsoft Entra security settings that help protect tenants with common controls such as requiring stronger authentication for administrative access.
+
+Related: [Microsoft Entra ID](#microsoft-entra-id), [Conditional Access](#conditional-access), [Authentication](#authentication)
 
 ## Service Principal
 
