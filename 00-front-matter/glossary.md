@@ -829,3 +829,33 @@ Related: [Global Secure Access](#global-secure-access), [Microsoft Entra Private
 A policy capability for allowing or blocking web access based on categories, domains, or security risk.
 
 Related: [Microsoft Entra Internet Access](#microsoft-entra-internet-access), [Secure Web Gateway](#secure-web-gateway)
+
+## Managed Service Account
+
+An Active Directory service account type designed for Windows services or scheduled tasks with managed password behavior.
+
+Related: [Active Directory Domain Services](#active-directory-domain-services), [Hybrid Identity](#hybrid-identity), [Workload Identity](#workload-identity)
+
+## Standard User Account
+
+A normal human user account used for interactive sign-in and user-driven work.
+
+Related: [Member User](#member-user), [Authentication](#authentication), [Least Privilege](#least-privilege)
+
+## System-Assigned Managed Identity
+
+A managed identity created for one Azure resource whose lifecycle is tied to that resource.
+
+Related: [Managed Identity](#managed-identity), [User-Assigned Managed Identity](#user-assigned-managed-identity), [Azure RBAC](#azure-rbac)
+
+## User-Assigned Managed Identity
+
+A standalone managed identity created as an Azure resource that can be assigned to one or more supported Azure resources.
+
+Related: [Managed Identity](#managed-identity), [System-Assigned Managed Identity](#system-assigned-managed-identity), [Azure RBAC](#azure-rbac)
+
+## Workload Identity Federation
+
+An authentication approach that lets an external workload exchange a trusted token for Microsoft Entra tokens without storing long-lived secrets.
+
+Related: [Workload Identity](#workload-identity), [Service Principal](#service-principal), [OAuth 2.0](#oauth-20)
