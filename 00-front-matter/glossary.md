@@ -727,3 +727,57 @@ Related: [Sign-In Risk](#sign-in-risk), [Identity Protection](#identity-protecti
 A user account that Microsoft Entra evaluates as potentially compromised based on risk detections and identity behavior.
 
 Related: [User Risk](#user-risk), [Identity Protection](#identity-protection), [Risk Detection](#risk-detection)
+
+## Access Policy
+
+In Azure Key Vault, a legacy vault-level authorization model that grants permissions to keys, secrets, or certificates directly inside the vault.
+
+Related: [Key Vault](#key-vault), [Azure RBAC](#azure-rbac), [Data Plane](#data-plane)
+
+## Control Plane
+
+The management layer used to create, configure, update, or delete Azure resources.
+
+Related: [Azure RBAC](#azure-rbac), [Data Plane](#data-plane), [Resource Group](#resource-group)
+
+## Custom Azure Role
+
+An Azure RBAC role definition created by an organization when built-in roles do not provide the exact required permissions.
+
+Related: [Azure RBAC](#azure-rbac), [Role Assignment](#role-assignment), [Scope](#scope)
+
+## Data Plane
+
+The access layer used to read, write, or use data inside an Azure resource, such as reading a Key Vault secret or accessing storage data.
+
+Related: [Control Plane](#control-plane), [Key Vault](#key-vault), [Azure RBAC](#azure-rbac)
+
+## Deny Assignment
+
+An Azure assignment that explicitly blocks specific actions, even when role assignments would otherwise grant access.
+
+Related: [Azure RBAC](#azure-rbac), [Effective Permissions](#effective-permissions), [Role Assignment](#role-assignment)
+
+## Key Vault
+
+An Azure service used to securely store and manage secrets, keys, and certificates.
+
+Related: [Azure RBAC](#azure-rbac), [Access Policy](#access-policy), [Data Plane](#data-plane)
+
+## Resource Group
+
+A logical Azure container used to organize related resources and apply management, lifecycle, and access controls.
+
+Related: [Azure](#azure), [Azure RBAC](#azure-rbac), [Scope](#scope)
+
+## Role Assignment
+
+An Azure RBAC binding that grants a security principal a role at a specific scope.
+
+Related: [Azure RBAC](#azure-rbac), [Scope](#scope), [Effective Permissions](#effective-permissions)
+
+## Scope
+
+The boundary where an Azure RBAC role assignment applies, such as management group, subscription, resource group, or resource.
+
+Related: [Azure RBAC](#azure-rbac), [Role Assignment](#role-assignment), [Resource Group](#resource-group)
