@@ -859,3 +859,51 @@ Related: [Managed Identity](#managed-identity), [System-Assigned Managed Identit
 An authentication approach that lets an external workload exchange a trusted token for Microsoft Entra tokens without storing long-lived secrets.
 
 Related: [Workload Identity](#workload-identity), [Service Principal](#service-principal), [OAuth 2.0](#oauth-20)
+
+## Admin Consent
+
+Consent granted by an administrator allowing an application to access data or permissions that users cannot approve on their own.
+
+Related: [User Consent](#user-consent), [Enterprise Application](#enterprise-application), [App Registration](#app-registration)
+
+## App Collection
+
+A My Apps grouping that organizes related enterprise applications for assigned users and groups.
+
+Related: [Enterprise Application](#enterprise-application), [Single Sign-On](#single-sign-on)
+
+## App Role
+
+An application-defined role that can be assigned to users, groups, or service principals to control app-specific authorization.
+
+Related: [Enterprise Application](#enterprise-application), [App Registration](#app-registration), [Role Assignment](#role-assignment)
+
+## Application Proxy
+
+Microsoft Entra feature that publishes internal web applications securely for remote access through a cloud service and on-premises connector.
+
+Related: [Application Proxy Connector](#application-proxy-connector), [Enterprise Application](#enterprise-application), [Conditional Access](#conditional-access)
+
+## Application Proxy Connector
+
+A Windows Server component installed inside the corporate network that connects internal web apps to the Microsoft Entra Application Proxy cloud service.
+
+Related: [Application Proxy](#application-proxy), [Hybrid Identity](#hybrid-identity)
+
+## Automatic Provisioning
+
+Automated creation, update, and removal of users or groups in a target application from Microsoft Entra ID.
+
+Related: [Enterprise Application](#enterprise-application), [SCIM](#scim), [Identity Governance](#identity-governance)
+
+## SCIM
+
+System for Cross-domain Identity Management. A standard often used for automated user and group provisioning between identity providers and SaaS applications.
+
+Related: [Automatic Provisioning](#automatic-provisioning), [Enterprise Application](#enterprise-application)
+
+## User Consent
+
+Consent granted by a user allowing an application to access data or permissions that the organization allows users to approve.
+
+Related: [Admin Consent](#admin-consent), [Enterprise Application](#enterprise-application)
