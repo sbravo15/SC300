@@ -278,12 +278,20 @@ Custom domains let an organization use its own verified domain name for sign-in 
 - A TXT record is the most common verification method.
 - After verification, users can have sign-in names that use the custom domain.
 
+The Domains page shows the tenant's default domain alongside any custom domains that have been added. In a lab, this is a quick way to confirm whether the custom domain exists, whether it is healthy, and whether services have been connected to it.
+
+![Microsoft 365 domains list](../assets/screenshots/section-03/domains-list.png)
+
 ### Domain comparison
 
 | Domain type | Example pattern | Typical use |
 |---|---|---|
 | Default tenant domain | `tenantname.onmicrosoft.com` | Created automatically with the tenant |
 | Custom domain | `company.example` | Used for professional sign-in names, email, and services |
+
+When creating a user, the selected domain becomes part of the user principal name. If the custom domain is not listed, verify that it has been added and validated before using it for user sign-in names.
+
+![Create new user domain selector](../assets/screenshots/section-03/create-new-user.png)
 
 ### Verification process
 
@@ -295,6 +303,18 @@ Custom domains let an organization use its own verified domain name for sign-in 
 | 4 | Wait for DNS propagation if needed |
 | 5 | Verify the domain in Microsoft cloud admin portal |
 | 6 | Use the domain for users and services |
+
+The domain wizard normally offers several verification methods. TXT verification is the cleanest default choice because it proves ownership without changing mail flow or requiring a public website.
+
+![Verify domain ownership options](../assets/screenshots/section-03/verify-domain-options.png)
+
+After choosing TXT verification, Microsoft provides the TXT name, value, and TTL guidance that must be recreated at the public DNS host for the domain.
+
+![Domain TXT verification values](../assets/screenshots/section-03/verify-domain-txt-record.png)
+
+At the DNS host or registrar, create a matching TXT record. The exact interface varies by provider, but the important part is that the record type, name, value, and TTL match what Microsoft expects.
+
+![TXT record entry at DNS host](../assets/screenshots/section-03/txt-record-entry.png)
 
 ### Key DNS records
 
@@ -356,6 +376,14 @@ Tenant-wide settings define default behavior for the Microsoft Entra environment
 | Guest settings | Guest access level and collaboration behavior | Reduces external-user exposure |
 | Group settings | Self-service group management, expiration, naming policy | Controls collaboration and lifecycle |
 | Device settings | Device join, registration, MFA requirement, device limits | Controls endpoint enrollment and identity |
+
+User settings are a high-impact area because they define what regular users can do by default. Settings such as app registration, group creation, guest access, non-admin portal visibility, LinkedIn integration, and keep-me-signed-in behavior can all change the tenant's baseline security posture.
+
+![Microsoft Entra user settings](../assets/screenshots/section-03/user-settings.png)
+
+Group settings control how much self-service group management is allowed. For SC-300, pay close attention to whether users can create security groups or Microsoft 365 groups, because group creation can directly affect access management and collaboration sprawl.
+
+![Microsoft Entra group settings](../assets/screenshots/section-03/group-settings.png)
 
 ### Security-related settings
 
