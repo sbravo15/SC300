@@ -907,3 +907,33 @@ Related: [Automatic Provisioning](#automatic-provisioning), [Enterprise Applicat
 Consent granted by a user allowing an application to access data or permissions that the organization allows users to approve.
 
 Related: [Admin Consent](#admin-consent), [Enterprise Application](#enterprise-application)
+
+## Application Permission
+
+An API permission that allows an application to act as itself without a signed-in user.
+
+Related: [API Permission](#api-permission), [Service Principal](#service-principal), [App Registration](#app-registration)
+
+## API Permission
+
+A permission requested by an app registration that allows an application to access an API such as Microsoft Graph or another protected resource.
+
+Related: [App Registration](#app-registration), [Delegated Permission](#delegated-permission), [Application Permission](#application-permission)
+
+## Claim
+
+A piece of information included in a token, such as a user attribute, app role, tenant, or permission value.
+
+Related: [ID Token](#id-token), [Access Token](#access-token), [App Role](#app-role)
+
+## Delegated Permission
+
+An API permission that allows an application to act on behalf of a signed-in user.
+
+Related: [API Permission](#api-permission), [OAuth 2.0](#oauth-20), [User Consent](#user-consent)
+
+## Redirect URI
+
+The application URL where Microsoft Entra sends the authentication response after sign-in.
+
+Related: [App Registration](#app-registration), [OpenID Connect](#openid-connect), [OAuth 2.0](#oauth-20)
