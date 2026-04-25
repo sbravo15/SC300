@@ -781,3 +781,51 @@ Related: [Azure RBAC](#azure-rbac), [Scope](#scope), [Effective Permissions](#ef
 The boundary where an Azure RBAC role assignment applies, such as management group, subscription, resource group, or resource.
 
 Related: [Azure RBAC](#azure-rbac), [Role Assignment](#role-assignment), [Resource Group](#resource-group)
+
+## Global Secure Access
+
+Microsoft Entra's unified Security Service Edge solution for identity-centric access to internet destinations, Microsoft services, and private applications.
+
+Related: [Microsoft Entra Internet Access](#microsoft-entra-internet-access), [Microsoft Entra Private Access](#microsoft-entra-private-access), [Zero Trust](#zero-trust)
+
+## Microsoft Entra Internet Access
+
+Global Secure Access capability that helps secure user access to internet and SaaS destinations through identity-aware controls.
+
+Related: [Global Secure Access](#global-secure-access), [Secure Web Gateway](#secure-web-gateway), [Traffic Forwarding Profile](#traffic-forwarding-profile)
+
+## Microsoft Entra Private Access
+
+Global Secure Access capability that provides Zero Trust access to private applications and internal resources without relying on broad traditional VPN access.
+
+Related: [Global Secure Access](#global-secure-access), [Zero Trust](#zero-trust), [Traffic Forwarding Profile](#traffic-forwarding-profile)
+
+## Remote Network Connectivity
+
+A Global Secure Access capability for connecting branch or remote networks so traffic can be secured without installing the client on every individual device.
+
+Related: [Global Secure Access](#global-secure-access), [Microsoft Entra Internet Access](#microsoft-entra-internet-access)
+
+## Secure Web Gateway
+
+A security service that protects users accessing web and SaaS destinations by applying filtering, inspection, and access controls.
+
+Related: [Microsoft Entra Internet Access](#microsoft-entra-internet-access), [Security Service Edge](#security-service-edge), [Web Content Filtering](#web-content-filtering)
+
+## Security Service Edge
+
+A cloud-delivered security model that combines services such as secure web gateway, private access, and cloud access controls near users and apps.
+
+Related: [Global Secure Access](#global-secure-access), [Secure Web Gateway](#secure-web-gateway), [Zero Trust](#zero-trust)
+
+## Traffic Forwarding Profile
+
+A Global Secure Access configuration that determines which categories of traffic are acquired, forwarded, or bypassed for assigned users or groups.
+
+Related: [Global Secure Access](#global-secure-access), [Microsoft Entra Private Access](#microsoft-entra-private-access), [Microsoft Entra Internet Access](#microsoft-entra-internet-access)
+
+## Web Content Filtering
+
+A policy capability for allowing or blocking web access based on categories, domains, or security risk.
+
+Related: [Microsoft Entra Internet Access](#microsoft-entra-internet-access), [Secure Web Gateway](#secure-web-gateway)
