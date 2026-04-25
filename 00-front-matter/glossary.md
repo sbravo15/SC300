@@ -937,3 +937,93 @@ Related: [API Permission](#api-permission), [OAuth 2.0](#oauth-20), [User Consen
 The application URL where Microsoft Entra sends the authentication response after sign-in.
 
 Related: [App Registration](#app-registration), [OpenID Connect](#openid-connect), [OAuth 2.0](#oauth-20)
+
+## Microsoft Defender for Cloud Apps
+
+Microsoft's cloud app security broker capability for discovering cloud app usage, monitoring SaaS activity, governing connected apps, applying policies, and controlling supported sessions.
+
+Related: [Cloud Access Security Broker](#cloud-access-security-broker), [Cloud Discovery](#cloud-discovery), [Conditional Access App Control](#conditional-access-app-control)
+
+## Cloud Access Security Broker
+
+A security control layer that sits between users and cloud services to provide visibility, policy enforcement, threat detection, and governance for cloud app usage.
+
+Related: [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps), [Shadow IT](#shadow-it), [Cloud Discovery](#cloud-discovery)
+
+## Shadow IT
+
+Use of applications, cloud services, or technology outside approved organizational governance or IT visibility.
+
+Related: [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps), [Cloud Discovery](#cloud-discovery), [Unsanctioned App](#unsanctioned-app)
+
+## Cloud Discovery
+
+Defender for Cloud Apps capability that analyzes traffic and log data to identify cloud apps, users, IP addresses, traffic volume, and app risk.
+
+Related: [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps), [Cloud App Catalog](#cloud-app-catalog), [Log Collector](#log-collector)
+
+## App Connector
+
+A Defender for Cloud Apps integration that connects to supported cloud apps through APIs to collect app activity, files, events, and governance data.
+
+Related: [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps), [Cloud Discovery](#cloud-discovery)
+
+## Conditional Access App Control
+
+A Defender for Cloud Apps capability that applies real-time access and session controls to supported cloud application sessions.
+
+Related: [Conditional Access](#conditional-access), [Session Policy](#session-policy), [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps)
+
+## Session Policy
+
+A Defender for Cloud Apps policy type that controls or monitors what users can do inside a supported cloud app session after access is granted.
+
+Related: [Conditional Access App Control](#conditional-access-app-control), [Data Exfiltration](#data-exfiltration), [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps)
+
+## Cloud App Catalog
+
+Defender for Cloud Apps database that evaluates cloud applications by risk, security, compliance, legal, and operational characteristics.
+
+Related: [Cloud Discovery](#cloud-discovery), [Sanctioned App](#sanctioned-app), [Unsanctioned App](#unsanctioned-app)
+
+## Sanctioned App
+
+A cloud application that an organization has approved for use and marked as allowed or trusted in Defender for Cloud Apps governance workflows.
+
+Related: [Unsanctioned App](#unsanctioned-app), [Cloud App Catalog](#cloud-app-catalog), [Shadow IT](#shadow-it)
+
+## Unsanctioned App
+
+A cloud application that an organization has marked as disallowed or not approved for business use.
+
+Related: [Sanctioned App](#sanctioned-app), [Shadow IT](#shadow-it), [Cloud Discovery](#cloud-discovery)
+
+## OAuth App Policy
+
+A Defender for Cloud Apps policy that monitors or alerts on OAuth-connected applications based on filters such as publisher, permissions, or app behavior.
+
+Related: [OAuth 2.0](#oauth-20), [Admin Consent](#admin-consent), [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps)
+
+## File Policy
+
+A Defender for Cloud Apps policy that monitors or governs cloud file activity, sharing, sensitivity, ownership, or exposure conditions.
+
+Related: [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps), [Session Policy](#session-policy), [Data Exfiltration](#data-exfiltration)
+
+## Data Exfiltration
+
+Unauthorized movement, copying, downloading, or sharing of organizational data outside approved boundaries.
+
+Related: [File Policy](#file-policy), [Session Policy](#session-policy), [Shadow IT](#shadow-it)
+
+## Log Collector
+
+A component or service used to collect logs from supported network devices or sources and forward them for Cloud Discovery analysis.
+
+Related: [Cloud Discovery](#cloud-discovery), [Snapshot Report](#snapshot-report), [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps)
+
+## Snapshot Report
+
+A Cloud Discovery report generated from a specific uploaded or collected set of traffic logs.
+
+Related: [Cloud Discovery](#cloud-discovery), [Log Collector](#log-collector)
