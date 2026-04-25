@@ -1,6 +1,6 @@
 # Section 4: Create configure, and manage Microsoft Entra identities
 
-Section 4 focuses on the identity objects that administrators create, configure, and manage in Microsoft Entra ID: users, groups, devices, service principals, managed identities, custom security attributes, licenses, and automation through Microsoft Graph PowerShell.
+Section 4 introduces the core identity objects managed in Microsoft Entra ID: users, groups, devices, service principals, managed identities, custom security attributes, licenses, and Microsoft Graph PowerShell automation.
 
 > [!NOTE]
 > This section maps primarily to the SC-300 skill area **Implement and manage user identities**. Key exam terms link to the [SC-300 glossary](../00-front-matter/glossary.md) on first meaningful use.
@@ -9,295 +9,453 @@ Section 4 focuses on the identity objects that administrators create, configure,
 
 ### Core idea
 
-Microsoft Entra ID is the central cloud directory for Microsoft identity. An identity can represent a person, a device, an application, an automation process, or an Azure resource.
+Microsoft Entra ID is Microsoft’s cloud identity-based management system. It acts as the central directory store for cloud identities and can synchronize with on-premises Active Directory in hybrid environments.
+
+![Hybrid identity synchronization](../assets/screenshots/section-04/hybrid-identity-sync.png)
+
+### What to know
+
+- Identity and account are often used interchangeably in Microsoft cloud administration.
+- Microsoft Entra ID, formerly Azure AD, is the central cloud directory store.
+- Identities can be synchronized from on-premises Active Directory Domain Services into Microsoft Entra ID.
+- Not every identity task is available in every portal.
+- PowerShell, Microsoft Graph, and Azure CLI are used for automation and advanced administration.
 
 ![Ways to manage identities](../assets/screenshots/section-04/identity-management-portals.png)
 
-### What to know
+### Management surfaces
 
-- Microsoft Entra ID stores cloud identity objects used across Microsoft 365, Azure, and integrated applications.
-- Some identity tasks can be managed from more than one portal, but the objects still live in the same tenant.
-- On-premises Active Directory identities can be synchronized to Microsoft Entra ID for hybrid environments.
-- PowerShell, Microsoft Graph, and Azure CLI matter because they support automation and bulk operations.
+| Management surface | Common use |
+|---|---|
+| Azure portal | Azure resources, Entra ID, devices, groups, roles, and some identity configuration |
+| Microsoft 365 admin center | Microsoft 365 users, licenses, groups, domains, and service administration |
+| Microsoft Entra admin center | Identity-focused administration for users, groups, devices, apps, roles, and governance |
+| On-premises Active Directory | Traditional domain identities synchronized to the cloud in hybrid environments |
+| PowerShell / Microsoft Graph / Azure CLI | Automation, bulk operations, scripting, and repeatable administration |
 
-### Identity types
+> [!WARNING]
+> Exam trap: Different portals can manage the same identity backend. A user created in Microsoft 365 still exists in Microsoft Entra ID.
 
-| Identity type | Represents | Common use |
-|---|---|---|
-| [Member user](../00-front-matter/glossary.md#member-user) | Internal employee or organizational account | Sign in to Microsoft 365, Azure, and apps |
-| [Guest user](../00-front-matter/glossary.md#guest-user) | External collaborator invited into the tenant | B2B collaboration with limited access |
-| [Service principal](../00-front-matter/glossary.md#service-principal) | Application or service identity | App permissions, automation, API access |
-| [Managed identity](../00-front-matter/glossary.md#managed-identity) | Azure-managed workload identity | Access Azure services without stored secrets |
-| [Device identity](../00-front-matter/glossary.md#device-identity) | Device object in Entra ID | Conditional Access, compliance, Intune, inventory |
+### User identities
 
-### Member vs guest users
+User identities represent human users who access Microsoft services.
 
-Member users are usually employees or internal accounts. Guest users are external identities invited through collaboration scenarios. The distinction matters because guest access is normally more limited and governed differently.
+| User type | Meaning |
+|---|---|
+| [Member user](../00-front-matter/glossary.md#member-user) | Internal employee or organizational user created in Entra ID or synchronized from on-premises Active Directory |
+| [Guest user](../00-front-matter/glossary.md#guest-user) | External user invited through B2B collaboration, usually managed in a home directory but granted access to this tenant |
 
 ![Guest and member users](../assets/screenshots/section-04/guest-vs-member-users.png)
 
-### Workload identities
+### Service principals
 
-Applications and Azure resources also need identities. A service principal is the tenant-local identity for an application. A managed identity is an Azure-managed identity that lets a resource authenticate without storing a password or secret in code.
+[Service principals](../00-front-matter/glossary.md#service-principal) represent applications or services that need to authenticate and access resources.
+
+- They are created when an application is registered in Microsoft Entra ID.
+- They are used for assigning permissions to applications and automation.
+- They support secure access without human interaction.
+
+Example: A web application that needs to read or write data through Microsoft Graph or access Azure Key Vault.
+
+![Service principals overview](../assets/screenshots/section-04/service-principals.png)
+
+### Managed identities
+
+[Managed identities](../00-front-matter/glossary.md#managed-identity) are special identities for Azure resources, such as virtual machines or function apps, so they can access supported Azure services without storing credentials.
+
+| Type | Meaning |
+|---|---|
+| System-assigned | Tied to one Azure resource; lifecycle follows that resource |
+| User-assigned | Standalone managed identity that can be reused across resources |
+
+Example: An Azure VM accessing a storage account by using a system-assigned managed identity.
 
 ![Managed identities overview](../assets/screenshots/section-04/managed-identities.png)
 
-> [!WARNING]
-> Exam trap: Do not think “identity” only means “human user.” SC-300 expects you to recognize users, guests, devices, applications, service principals, and managed identities.
+### Device identities
 
-## 36. Create, Configure, and Manage Users
+Each device that registers, joins, or hybrid joins Microsoft Entra ID receives a [device identity](../00-front-matter/glossary.md#device-identity).
+
+- Device identities are used by Conditional Access, compliance evaluation, and Intune management.
+- Microsoft Entra joined devices are typically organization-owned and cloud-managed.
+- Microsoft Entra hybrid joined devices are connected to both on-premises Active Directory and Microsoft Entra ID.
+- Microsoft Entra registered devices are commonly personal or BYOD devices.
+
+![Device identity types](../assets/screenshots/section-04/device-identity-types.png)
+
+## 36. Create, Configure, and Manage Users and Groups
 
 ### Core idea
 
-Users are the primary human identities in Microsoft Entra ID. A user object includes sign-in information, account state, profile attributes, group membership, role assignments, and license assignments.
+Microsoft Entra groups organize users, devices, and service principals so administrators can manage access, collaboration, email distribution, and policy targeting at scale.
 
-### What to know
+### Group types
 
-- The [user principal name](../00-front-matter/glossary.md#user-principal-name) is the sign-in name for the user.
-- The domain portion of the UPN must use a domain available in the tenant.
-- Account enabled controls whether the user can sign in.
-- Profile attributes support reporting, filtering, dynamic groups, and administrative workflows.
-- Licenses enable access to Microsoft 365 services.
+| Group type | Main purpose | Important limitation |
+|---|---|---|
+| [Microsoft 365 group](../00-front-matter/glossary.md#microsoft-365-group) | Collaboration and Microsoft 365 shared resources | Does not contain device identities |
+| Distribution group | Email communication | Cannot assign permissions to resources |
+| [Mail-enabled security group](../00-front-matter/glossary.md#mail-enabled-security-group) | Email plus access control | Does not provide Microsoft 365 collaboration workspace features |
+| [Security group](../00-front-matter/glossary.md#security-group) | Permissions, access control, and policy targeting | No email functionality by default |
 
-![User principal name fields](../assets/screenshots/section-04/user-principal-name.png)
+### Microsoft 365 groups
 
-### User creation flow
+Microsoft 365 groups are collaboration-ready groups. They include shared resources such as a mailbox, calendar, SharePoint site, OneNote, Planner, and Microsoft Teams integration.
 
-| Step | Purpose |
-|---:|---|
-| 1 | Create the user identity |
-| 2 | Choose the UPN and verified domain |
-| 3 | Configure required profile attributes |
-| 4 | Add group memberships if needed |
-| 5 | Assign licenses if the user needs Microsoft 365 services |
-| 6 | Validate sign-in and access behavior |
+- Useful for collaboration and teamwork.
+- Supports guest access for external collaboration.
+- Membership can be assigned manually or managed dynamically based on user attributes.
+
+![Microsoft 365 groups](../assets/screenshots/section-04/microsoft-365-groups.png)
+
+### Distribution groups
+
+Distribution groups are email-only groups used to send messages to multiple recipients.
+
+- Used for announcements and internal communication.
+- Does not provide shared workspace features.
+- Cannot be used to assign resource permissions.
+- Microsoft 365 groups can sometimes cover similar communication needs while also providing collaboration features.
+
+![Distribution groups](../assets/screenshots/section-04/distribution-groups.png)
+
+### Mail-enabled security groups
+
+Mail-enabled security groups combine email capability with access control.
+
+- Can receive email like a distribution group.
+- Can be used to assign permissions to supported Microsoft 365 resources.
+- Does not include Teams, shared calendar, or document libraries like Microsoft 365 groups.
+
+![Mail-enabled security groups](../assets/screenshots/section-04/mail-enabled-security-groups.png)
+
+### Security groups
+
+Security groups are primarily used for permissions and policy targeting.
+
+- Used to assign access to resources such as SharePoint sites, applications, and Intune policies.
+- Can include users, devices, and service principals.
+- Can use assigned membership or dynamic rules.
+- Cannot send or receive email unless configured as mail-enabled security groups.
+
+![Security groups](../assets/screenshots/section-04/security-groups.png)
+
+### Assigned vs dynamic groups
+
+| Membership type | How it works | Best use |
+|---|---|---|
+| Assigned | Members are manually added or removed by an administrator | Small groups, fixed membership, precise control |
+| Dynamic | Members are automatically added or removed by rules based on attributes | Large environments, lifecycle automation, department or device targeting |
+
+> [!WARNING]
+> Exam trap: If membership is dynamic, the rule controls the members. You do not manually add or remove members from the group.
+
+## 38. Create, Configure, and Manage Groups in the Microsoft 365 Admin Center
+
+### Core idea
+
+The Microsoft 365 admin center is commonly used to create Microsoft 365 groups because it emphasizes collaboration settings such as group owners, members, email address, privacy, and Teams integration.
+
+### Group owner
+
+A group owner can manage group membership and settings. Depending on the group type and configuration, an owner may be able to add or remove members, manage group conversations, rename the group, or update the group description.
+
+### Assigned group process
+
+1. Add a group owner.
+2. Add group members.
+3. Configure settings:
+   - Group email address, such as `finance`.
+   - Privacy, such as private or public.
+   - Whether to create a Microsoft Team for the group.
+
+### Privacy behavior
+
+| Privacy setting | Meaning |
+|---|---|
+| Private | Users generally need to be invited or approved by an owner |
+| Public | Users can discover and join more easily |
 
 > [!TIP]
-> Memory hook: Identity first, attributes second, access third, license fourth.
+> Memory hook: Microsoft 365 admin center group creation is collaboration-first.
 
-## 37. Understand Microsoft Entra Group Types
-
-### Core idea
-
-Groups simplify management by letting administrators assign access, collaboration, email distribution, or policy targeting to a collection of identities. The group type determines what the group can do.
-
-### Group type overview
-
-| Group type | Best for | Email | Access control | Dynamic membership |
-|---|---|---:|---:|---:|
-| [Microsoft 365 group](../00-front-matter/glossary.md#microsoft-365-group) | Collaboration and Microsoft 365 workloads | Yes | Limited workload/resource scenarios | Users only |
-| Distribution group | Email distribution | Yes | No | No Entra dynamic membership |
-| [Mail-enabled security group](../00-front-matter/glossary.md#mail-enabled-security-group) | Email plus access control | Yes | Yes | No Entra dynamic membership |
-| [Security group](../00-front-matter/glossary.md#security-group) | Permissions, policies, and access management | No | Yes | Users or devices |
-
-### How to choose
-
-| Requirement | Recommended group type |
-|---|---|
-| Team collaboration with mailbox, calendar, SharePoint, or Teams | Microsoft 365 group |
-| Send email to many recipients only | Distribution group |
-| Assign permissions and also use an email address | Mail-enabled security group |
-| Assign access, policies, or device/user targeting | Security group |
-| Target Windows devices dynamically | Security group with dynamic device membership |
-
-> [!WARNING]
-> Exam trap: Microsoft 365 groups are collaboration groups. Security groups are the safer default answer for access control and device targeting.
-
-## 38. Create, Configure, and Manage Groups
+## 38. Create, Configure, and Manage Groups in the Azure Portal
 
 ### Core idea
 
-Groups can be created from Microsoft 365 admin experiences or from Microsoft Entra/Azure portal experiences. Regardless of where a group is created, the identity object is part of Microsoft Entra ID.
+Groups can also be created in the Azure portal or Microsoft Entra admin center. It does not matter where the group is created; the group object still lives in Microsoft Entra ID.
 
-### What to know
+### Basic process
 
-- Microsoft 365 group creation focuses on collaboration settings such as owners, members, email address, privacy, and Teams integration.
-- Entra group creation focuses on group type, role assignment capability, membership type, owners, members, and dynamic rules.
-- Group owners can manage group membership and settings depending on configuration.
-- Private groups require approval or invitation; public groups are easier to discover and join.
+1. Open the Azure portal.
+2. Go to Microsoft Entra ID.
+3. Open Groups.
+4. Select New group.
 
 ![Create new group overview](../assets/screenshots/section-04/create-new-group-overview.png)
 
-### Group creation decisions
+### Choose group type
 
-| Decision | Why it matters |
-|---|---|
-| Group type | Determines collaboration, email, and access behavior |
-| Membership type | Determines whether membership is manual or rule-based |
-| Owners | Determines who can manage the group |
-| Members | Determines who receives access or collaboration membership |
-| Role assignment capability | Determines whether Entra roles can be assigned to the group |
+In the Azure/Entra portal, the main group type choices are Security and Microsoft 365.
+
+![Group type dropdown](../assets/screenshots/section-04/group-type-dropdown.png)
+
+### Choose membership type
+
+The membership type controls whether group members are added manually or by dynamic rule.
 
 ![Group membership type dropdown](../assets/screenshots/section-04/membership-type-dropdown.png)
 
-### Membership types
+### Group settings
 
-| Membership type | Meaning | Best use |
-|---|---|---|
-| Assigned | Members are manually added and removed | Small or fixed groups |
-| Dynamic user | Users are added by rule based on attributes | Department, job title, location, lifecycle automation |
-| Dynamic device | Devices are added by rule based on device attributes | Device targeting, policy assignment, platform/location groups |
+When creating a group, review the group name, description, owners, members, role assignment setting, and membership type before creating it.
 
-## 39. Configure Dynamic Group Membership Rules
+![Microsoft 365 group settings](../assets/screenshots/section-04/microsoft-365-group-settings.png)
 
-### Core idea
+### Dynamic user rules
 
-[Dynamic membership groups](../00-front-matter/glossary.md#dynamic-membership-group) automatically update membership based on user or device attributes. They reduce manual work and make group membership follow directory data.
+Dynamic user rules can target users based on attributes such as department or job title.
 
-### What to know
-
-- Dynamic user rules evaluate user attributes.
-- Dynamic device rules evaluate device attributes.
-- Dynamic groups cannot be manually edited like assigned groups.
-- Rule processing can take time.
-- Bad source attributes create bad group membership, so attribute hygiene matters.
-
-### Dynamic user rule example
-
-A dynamic user group can include users based on department or job title. This supports scenarios such as “all Sales users” or “all users whose job title starts with Sales.”
+Example: Department equals Sales or job title starts with Sales.
 
 ![Dynamic user membership rule](../assets/screenshots/section-04/dynamic-user-rule.png)
 
+### Security group for devices
+
+Security groups can use dynamic device membership. This is useful for scenarios such as targeting all Windows devices that follow a naming pattern.
+
+![Security group for dynamic devices](../assets/screenshots/section-04/security-group-dynamic-device.png)
+
 ### Dynamic device rule example
 
-A dynamic device group can include devices based on display name, operating system, ownership, or other device properties. This is useful for targeting policies to Windows devices or location-based device groups.
+The example rule targets devices where the display name starts with a location prefix and the device operating system equals Windows.
 
 ![Dynamic device membership rule](../assets/screenshots/section-04/dynamic-device-rule.png)
 
+### What to know
+
+- Dynamic rules can take time to evaluate and populate membership.
+- If the rule is wrong, fix the rule or the source attributes.
+- Security groups support dynamic device membership; Microsoft 365 groups do not.
+
 > [!WARNING]
-> Exam trap: If membership is dynamic, fix the rule or source attributes. Do not try to manage membership manually.
+> Exam trap: To create a dynamic group containing Windows devices, use a security group with dynamic device membership.
 
 ## 40. Manage Custom Security Attributes
 
 ### Core idea
 
-[Custom security attributes](../00-front-matter/glossary.md#custom-security-attribute) are business-specific key-value pairs assigned to supported Microsoft Entra objects. They can support filtering, access decisions, automation, and application logic.
+[Custom security attributes](../00-front-matter/glossary.md#custom-security-attribute) are name-value pairs that store business-specific data on supported Microsoft Entra objects. They can support access control, Conditional Access design, custom application logic, filtering, and automation.
 
 ### What to know
 
-- Custom security attributes have a separate permission model.
-- Global Administrator does not automatically manage custom security attributes.
-- Attribute Definition Administrator defines attribute sets and attributes.
-- Attribute Assignment Administrator assigns attribute values to supported objects.
-- Attribute sets group related attributes.
+- Custom security attributes are not ordinary user profile fields.
+- They have a separate permissions model.
+- Attribute sets organize related custom security attributes.
+- Attribute definitions specify the attribute name, data type, and allowed behavior.
+
+### Start in custom security attributes
+
+In the Entra portal, open Custom security attributes. The portal reminds you to check permissions, add attribute sets, and manage attributes.
 
 ![Custom security attributes overview](../assets/screenshots/section-04/custom-security-attributes.png)
 
-### Required roles
+### Assign required roles
 
-| Role | Purpose |
-|---|---|
-| Attribute Definition Administrator | Defines attribute sets and attribute definitions |
-| Attribute Assignment Administrator | Assigns custom security attribute values |
+To define and assign custom security attributes, assign the appropriate roles:
+
+- Attribute Assignment Administrator
+- Attribute Definition Administrator
 
 ![Attribute administrator roles](../assets/screenshots/section-04/attribute-administrator-roles.png)
 
-### Example: executive flag
+### Create an attribute set
 
-An attribute set can group a custom attribute such as `isExecutive`. That attribute can then store a Boolean value used by administrative workflows, application logic, or future policy design.
+An attribute set groups related custom security attributes. In this example, an Executive attribute set is used for executive-related values.
+
+![Executive attribute set](../assets/screenshots/section-04/executive-attribute-set.png)
+
+### Create an attribute
+
+The `isExecutive` attribute can be configured as a Boolean value to flag whether a user is an executive.
 
 ![Is executive attribute](../assets/screenshots/section-04/is-executive-attribute.png)
 
 > [!WARNING]
-> Exam trap: Custom security attributes are not normal profile fields. They require dedicated roles and should be designed intentionally.
+> Exam trap: Global Administrator does not automatically have all custom security attribute permissions. Use the dedicated attribute roles.
 
-## 41. Automate Bulk Operations
+## 41. Automate Bulk Operations by Using Microsoft Tools
 
 ### Core idea
 
-Bulk operations help administrators create, invite, or delete many users at once. They are useful for onboarding batches of users from a spreadsheet or HR export.
+Bulk operations let administrators create, invite, or delete many users at once. This is useful when HR or another business process provides a spreadsheet of new employees.
 
-### What to know
+### Bulk user creation path
 
-- Bulk create uses a CSV template.
-- The CSV must use the correct tenant domain for UPNs.
-- Bulk operations can take time to process.
-- Always verify results after upload.
-- Use sanitized test data in labs and repo screenshots.
+Use the Azure portal flow:
+
+```text
+Microsoft Entra ID > Users > Bulk operations > Bulk create
+```
+
+### Basic process
+
+1. Download the CSV template.
+2. Open the template in Excel or another spreadsheet tool.
+3. Fill in the user details.
+4. Use your tenant domain for user names.
+5. Set passwords and sign-in options.
+
+![Bulk create CSV template](../assets/screenshots/section-04/bulk-create-template.png)
+
+6. Save the file.
+7. Upload it back through Bulk create.
 
 ![Bulk create users](../assets/screenshots/section-04/bulk-create-users.png)
 
-### Bulk create process
+8. Wait for processing.
+9. Verify that the users were created.
 
-| Step | Purpose |
-|---:|---|
-| 1 | Download the CSV template |
-| 2 | Fill in required user fields |
-| 3 | Use the correct tenant domain |
-| 4 | Save the CSV |
-| 5 | Upload it through the bulk create workflow |
-| 6 | Review processing results |
-| 7 | Confirm users were created correctly |
+### Important notes
+
+- Portal screens can change over time.
+- Use your own tenant and domain, not lab demo values.
+- Bulk operations are useful for large onboarding waves.
+- A similar workflow exists in the Microsoft 365 admin center for adding multiple active users.
+- The identities still go back to Microsoft Entra ID.
 
 > [!TIP]
-> Memory hook: Bulk import is only as clean as the CSV.
+> Memory hook: Download template, fill CSV, upload, verify.
 
-## 42. Concepts of Microsoft Entra Device Register vs Device Join
+## 42. Concepts of Entra ID Device Register vs Device Join
 
 ### Core idea
 
-Device identities represent devices in Microsoft Entra ID. The three major states are Microsoft Entra registered, Microsoft Entra joined, and Microsoft Entra hybrid joined.
+Device identity types describe how a device relates to Microsoft Entra ID and how much control the organization has over it.
 
 ![Device identity types](../assets/screenshots/section-04/device-identity-types.png)
 
-### Device identity comparison
+### Registered device
 
-| Device state | Typical ownership | Sign-in model | Control level |
+Best memory hook: **BYOD**.
+
+A personal device is registered to Microsoft Entra ID so the user can access company resources.
+
+- User signs in to the device with a personal or local account.
+- Company can restrict access to company data and apps.
+- Company does not fully control the entire device.
+- Common for personal laptops, phones, and tablets.
+
+Key point: personal device plus limited company control.
+
+### Microsoft Entra joined device
+
+A company device is joined directly to Microsoft Entra ID.
+
+- User signs in with an organizational Entra ID account.
+- Device is usually owned by the organization.
+- Company has stronger control.
+- Better for locking down and managing company devices.
+
+Key point: company device plus organizational account sign-in.
+
+### Microsoft Entra hybrid joined device
+
+A hybrid joined device is used when an organization has both on-premises Active Directory and Microsoft Entra ID.
+
+- Device is connected to traditional AD DS and represented in Microsoft Entra ID.
+- Common in older or transitioning enterprise environments.
+- Supports hybrid identity and device scenarios.
+
+Key point: company device connected to both AD DS and Microsoft Entra ID.
+
+### Quick comparison
+
+| Type | Device ownership | Sign-in type | Control level |
 |---|---|---|---|
-| [Microsoft Entra registered](../00-front-matter/glossary.md#microsoft-entra-registered-device) | Personal or BYOD | Personal/local Windows sign-in plus connected work account | Limited control over work access |
-| [Microsoft Entra joined](../00-front-matter/glossary.md#microsoft-entra-joined-device) | Organization-owned | Organizational account sign-in | Strong cloud management and policy control |
-| [Microsoft Entra hybrid joined](../00-front-matter/glossary.md#microsoft-entra-hybrid-joined-device) | Organization-owned | Joined to AD DS and represented in Entra ID | Hybrid control across AD DS and cloud |
-
-### What to know
-
-- Registered usually means BYOD.
-- Joined usually means cloud-first, organization-owned device.
-- Hybrid joined usually means traditional AD DS plus Microsoft Entra ID.
-- Device identity supports Conditional Access, Intune, compliance, and reporting.
-
-![All devices in Microsoft Entra](../assets/screenshots/section-04/all-devices.png)
+| [Microsoft Entra registered](../00-front-matter/glossary.md#microsoft-entra-registered-device) | Usually user-owned | Personal/local account | Limited |
+| [Microsoft Entra joined](../00-front-matter/glossary.md#microsoft-entra-joined-device) | Usually company-owned | Organizational account | High |
+| [Microsoft Entra hybrid joined](../00-front-matter/glossary.md#microsoft-entra-hybrid-joined-device) | Usually company-owned | AD/Entra connected | High |
 
 > [!TIP]
-> Memory hook: Registered is connected, joined is controlled, hybrid joined is connected to both.
+> Memory hook: Registered equals personal device connected to work. Joined equals work device controlled by company. Hybrid joined equals work device connected to both AD DS and Entra ID.
 
 ## 43. Manage Device Join to Microsoft Entra ID
 
 ### Core idea
 
-A Windows device can become Microsoft Entra joined during first-time setup when the user signs in with an organizational work or school account.
+A new Windows device can become Microsoft Entra joined during the Windows out-of-box experience when the user signs in with an organizational Entra ID account.
 
-### What to know
+### Process shown
 
-- The join flow commonly happens during Windows setup.
-- The user signs in with an organizational account.
-- The device appears in Microsoft Entra ID under Devices.
-- The device can then participate in cloud access and management scenarios.
+1. Start a fresh Windows setup.
+2. Go through normal setup steps:
+   - Confirm location.
+   - Confirm keyboard layout.
+   - Wait for update checks.
+3. At the sign-in step, enter an organizational account that exists in Microsoft Entra ID.
 
-### Verification points
+![Windows OOBE organization sign-in](../assets/screenshots/section-04/windows-oobe-sign-in.png)
 
-| Location | What to confirm |
+4. Authenticate with the password.
+5. Continue and finish setup.
+6. Windows signs in with the organizational account.
+7. The device becomes Microsoft Entra joined.
+
+### How to prove the join worked
+
+On the Windows device:
+
+- Open Settings.
+- Confirm the signed-in user is the Entra ID organizational account.
+- Note the generated machine name.
+
+In Microsoft Entra ID:
+
+- Go to Devices.
+- Find the device.
+- Confirm the join type shows Microsoft Entra joined.
+
+### Important distinction
+
+| Setup choice | Result |
 |---|---|
-| Windows settings | User is signed in with the organizational account |
-| Microsoft Entra Devices | Device shows Microsoft Entra joined |
-| Intune, if used | Management and compliance state appear |
+| Organizational account during setup | Device becomes Microsoft Entra joined |
+| Personal account during setup | Device does not join; it may be registered later |
 
 > [!WARNING]
-> Exam trap: Signing in with an organization account during setup can join the device. Connecting a work account later from a personal Windows profile usually registers the device.
+> Exam trap: Joining during first-time setup and registering later from a personal profile are different outcomes.
 
-## 44. Manage Device Registration in Microsoft Entra ID
+## 44. Manage Device Registrations in Microsoft Entra ID
 
 ### Core idea
 
-Device registration is the common BYOD pattern. The user keeps signing in to Windows with a personal or local account, then connects a work or school account so company resources can apply work-related access controls.
+Device registration is the common personal-device scenario. The user signs in to Windows with a personal or local account, then adds a work or school account under Access work or school.
 
-### What to know
+![All devices in Microsoft Entra](../assets/screenshots/section-04/all-devices.png)
 
-- Registration is not the same as join.
-- Registration creates a device identity for access decisions.
-- The organization has less control than it would over a joined device.
-- Registration is common for personal laptops, phones, and tablets.
+### Process shown
+
+1. On the personal Windows device, open:
+
+```text
+Settings > Accounts > Access work or school
+```
+
+2. Select Connect.
 
 ![Connect work or school account](../assets/screenshots/section-04/join-device.png)
+
+3. Enter the organizational Entra ID account.
+4. Sign in with work credentials.
+5. Wait while Windows registers the device and applies work-related policy.
+
+### Result
+
+- The device appears in Microsoft Entra ID.
+- The join type shows registered, not joined.
+- The user still signs in to Windows with the personal or local account.
+- Company control is more limited than with a joined device.
 
 ### Registered vs joined
 
@@ -312,22 +470,47 @@ Device registration is the common BYOD pattern. The user keeps signing in to Win
 
 ### Core idea
 
-Microsoft 365 licenses enable services for users. Licenses can be assigned directly to users or indirectly through groups.
+Microsoft 365 licenses enable services for users. Licenses can be assigned directly to users or indirectly through group-based licensing.
 
-### What to know
+### Where to manage licenses
 
-- Direct license assignment is simple for small numbers of users.
-- [Group-based licensing](../00-front-matter/glossary.md#group-based-licensing) scales better for large environments.
-- Group-based licensing requires enough available licenses.
-- Reports help identify usage and adoption, but they do not replace access reviews.
+Use the Microsoft 365 admin center:
 
-### Licensing comparison
+```text
+Billing > Licenses
+```
 
-| Method | Best use | Risk |
-|---|---|---|
-| Direct user licensing | Small or exception-based assignments | Harder to maintain at scale |
-| Group-based licensing | Department, role, or lifecycle-based licensing | Requires clean group membership |
-| Usage reporting | Review service activity and adoption | Does not prove access is still appropriate |
+From there, administrators can:
+
+- See available licenses.
+- Check who has a license.
+- Assign licenses directly to users.
+- Review license availability.
+
+### Direct user licensing
+
+Direct assignment works when only a small number of users need a license or when an exception is required.
+
+### Group-based licensing
+
+[Group-based licensing](../00-front-matter/glossary.md#group-based-licensing) is better at scale.
+
+1. Create a group.
+2. Add users who should receive the license.
+3. Assign the license to the group.
+4. Confirm enough unassigned licenses are available.
+
+### Buying and comparing licenses
+
+- Use Marketplace or Purchase services, depending on the tenant experience and region.
+- Compare license plans before selecting one.
+- Monitor usage through license assignment views and reports.
+
+### Important notes
+
+- Tenants may show different license options.
+- Menu names can differ by region and tenant configuration.
+- Group-based licensing only works if licenses are available.
 
 > [!TIP]
 > Memory hook: Direct licensing is simple; group-based licensing is scalable.
@@ -336,72 +519,157 @@ Microsoft 365 licenses enable services for users. Licenses can be assigned direc
 
 ### Core idea
 
-PowerShell is Microsoft’s command-line and automation shell. It is useful because repeated or large-scale administrative work can be scripted instead of performed manually.
+PowerShell is Microsoft’s command-line and automation tool. It is used across Windows, Azure, Microsoft 365, Exchange Online, Teams, SharePoint, Defender, and Purview.
 
-### Core concepts
+### Why use PowerShell instead of the GUI?
+
+PowerShell is useful when you need to:
+
+- Automate repeated tasks.
+- Manage many objects or machines at once.
+- Export results.
+- Script administrative work.
+- Work remotely.
+
+### Basic concepts
 
 | Concept | Example | Meaning |
 |---|---|---|
-| Verb-Noun | `Get-Service` | Command naming pattern |
-| Parameter | `-Name winrm` | Adds detail to a command |
-| Pipeline | `|` | Sends output to the next command |
+| Verb-Noun syntax | `Get-Service` | PowerShell command naming pattern |
+| Parameter | `-Name winrm` | Adds detail or filtering to a command |
+| Tab completion | `Get-S` then `Tab` | Cycles through matching commands |
+| Pipeline | `|` | Sends output from one command to another |
 | Variable | `$computerName` | Stores a reusable value |
-| Help | `Get-Help` | Displays command help |
 
-### Example commands
+### Core commands
 
 ```powershell
 Get-Service
+Get-Service -Name winrm
+Start-Service -Name winrm
+Stop-Service -Name winrm
 Get-Process
+Get-Command
 Get-Command -Verb Get
+Get-Command -Noun net*
 Get-Help Get-EventLog
+```
+
+### Event log example
+
+```powershell
 Get-EventLog -LogName Security -Newest 10 | Format-List
 ```
 
+This gets the newest 10 Security log entries and formats them as a list.
+
+### Export output
+
+```powershell
+Get-EventLog -LogName Security -Newest 10 |
+  Format-List |
+  Out-File C:\security_log.txt
+```
+
+### Variables
+
+```powershell
+$computerName = "CLIENT10"
+Get-EventLog -LogName Security -ComputerName $computerName -Newest 10
+```
+
+### Execution policy
+
+```powershell
+Get-ExecutionPolicy
+Set-ExecutionPolicy -ExecutionPolicy Bypass
+```
+
 > [!WARNING]
-> Exam trap: PowerShell is not just a command prompt. Its value is automation, scale, repeatability, and remote administration.
+> Exam trap: PowerShell is not valuable because it is “another terminal.” It is valuable because it makes administration repeatable, scriptable, and scalable.
 
 ## 47. Understanding Microsoft Graph vs Traditional PowerShell
 
 ### Core idea
 
-[Microsoft Graph](../00-front-matter/glossary.md#microsoft-graph) is Microsoft’s unified API for Microsoft cloud services. Microsoft Graph PowerShell uses that API to manage Microsoft Entra ID and Microsoft 365 objects with modern authentication.
+[Microsoft Graph](../00-front-matter/glossary.md#microsoft-graph) is Microsoft’s unified API endpoint for interacting with many Microsoft cloud services. Microsoft Graph PowerShell uses Graph so administrators can manage Microsoft cloud services through a modern, unified interface.
 
-### Comparison
+### Why Microsoft moved toward Graph
+
+Traditional Microsoft cloud administration was fragmented:
+
+- Different modules for different services.
+- Different connection methods.
+- Older remoting methods.
+- Legacy authentication patterns.
+- Frequent deprecations of older modules.
+
+Microsoft Graph provides a more unified, secure, scalable, and future-ready platform.
+
+### Graph vs traditional PowerShell
 
 | Area | Traditional modules | Microsoft Graph |
 |---|---|---|
-| Service model | Fragmented by product | Unified API surface |
+| Scope | Service-specific | Unified Microsoft cloud API |
 | Authentication | Older methods may appear | Modern token-based authentication |
-| Automation | Service-specific scripts | Better cross-service automation |
-| Long-term direction | Some modules deprecated over time | Current strategic direction |
+| Automation | Fragmented by service | Better cross-service automation |
+| Platform fit | Mixed | Better cross-platform fit |
+| Long-term direction | Some modules deprecated | Microsoft’s strategic direction |
+
+### When to use Graph
+
+Use Microsoft Graph when:
+
+- Working with modern Microsoft 365 or Azure cloud services.
+- Building automation for long-term use.
+- A Graph-based replacement exists.
+- You need a consistent approach across services.
+
+Use older tools only when a Graph-based replacement is not available.
 
 > [!TIP]
-> Memory hook: Traditional PowerShell was service-by-service; Graph is cloud-wide.
+> Memory hook: Traditional PowerShell was service-by-service; Microsoft Graph is cloud-wide.
 
 ## 48. Installing and Connecting Microsoft Graph for PowerShell
 
 ### Core idea
 
-Before using Microsoft Graph PowerShell, install the module and connect with the permissions, or scopes, needed for the task.
+Before using Microsoft Graph PowerShell, install the module and connect with the permissions, or scopes, required for the task.
 
-### Basic setup flow
+### Process
 
-| Step | Purpose |
-|---:|---|
-| 1 | Check execution policy if scripts are blocked |
-| 2 | Install Microsoft Graph PowerShell |
-| 3 | Connect to Microsoft Graph |
-| 4 | Request required scopes |
-| 5 | Run commands against Entra objects |
-
-### Example commands
+1. Check execution policy if scripts are blocked.
 
 ```powershell
 Get-ExecutionPolicy
+```
+
+2. Adjust execution policy only if appropriate for the admin workstation.
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy Bypass
+```
+
+3. Install Microsoft Graph PowerShell.
+
+```powershell
 Install-Module Microsoft.Graph -Scope CurrentUser
+```
+
+4. Connect with the required scopes.
+
+```powershell
 Connect-MgGraph -Scopes "Group.ReadWrite.All", "User.ReadWrite.All"
 ```
+
+### What scopes are
+
+Scopes are the permissions requested by the Graph session. Examples:
+
+| Scope | Meaning |
+|---|---|
+| `Group.ReadWrite.All` | Read and write group objects |
+| `User.ReadWrite.All` | Read and write user objects |
 
 > [!WARNING]
 > Exam trap: Broad Graph scopes grant broad capability. Request only what the task requires.
@@ -410,25 +678,23 @@ Connect-MgGraph -Scopes "Group.ReadWrite.All", "User.ReadWrite.All"
 
 ### Core idea
 
-Microsoft Graph PowerShell can manage users, groups, licenses, and bulk operations in Microsoft Entra ID. The same objects are visible in the portal, but automation is faster and more repeatable.
+PowerShell with Microsoft Graph can manage Microsoft Entra ID objects such as users, groups, licenses, and bulk operations. It affects the same identities visible in Microsoft 365 and Entra portals.
 
-### Common cmdlets
-
-| Cmdlet | Use |
-|---|---|
-| `Get-MgUser` | Read users |
-| `New-MgUser` | Create users |
-| `Remove-MgUser` | Delete users |
-| `Get-MgSubscribedSku` | View license SKUs |
-| `Set-MgUserLicense` | Assign or remove licenses |
-| `New-MgGroup` | Create groups |
-| `New-MgGroupMemberByRef` | Add group members by object reference |
-
-### Sanitized user creation pattern
+### Connect to Microsoft Graph
 
 ```powershell
 Connect-MgGraph -Scopes "Group.ReadWrite.All", "User.ReadWrite.All"
+```
 
+### View users
+
+```powershell
+Get-MgUser -All
+```
+
+### Create a single user
+
+```powershell
 New-MgUser `
   -AccountEnabled:$true `
   -DisplayName "Example User" `
@@ -440,7 +706,27 @@ New-MgUser `
   }
 ```
 
-### Bulk creation pattern
+### Delete a user
+
+```powershell
+$user = Get-MgUser -Filter "userPrincipalName eq 'exampleuser@contoso.example'"
+if ($user) {
+  Remove-MgUser -UserId $user.Id -Confirm:$false
+}
+```
+
+### Bulk create users from CSV
+
+Example CSV structure:
+
+```csv
+DisplayName,MailNickname,UserPrincipalName
+Example User,exampleuser,exampleuser@contoso.example
+Sales User,salesuser,salesuser@contoso.example
+Support User,supportuser,supportuser@contoso.example
+```
+
+Bulk create pattern:
 
 ```powershell
 $PasswordProfile = @{
@@ -458,9 +744,55 @@ Import-Csv -Path ".\users.csv" | ForEach-Object {
 }
 ```
 
+### Bulk delete users from CSV
+
+```powershell
+Import-Csv -Path ".\users.csv" | ForEach-Object {
+  $user = Get-MgUser -Filter "userPrincipalName eq '$($_.UserPrincipalName)'"
+  if ($user) {
+    Remove-MgUser -UserId $user.Id -Confirm:$false
+  }
+}
+```
+
+### View available licenses
+
+```powershell
+Get-MgSubscribedSku |
+  Select-Object SkuPartNumber, SkuId, ConsumedUnits, PrepaidUnits
+```
+
+### Assign a license
+
+```powershell
+Set-MgUserLicense `
+  -UserId "exampleuser@contoso.example" `
+  -AddLicenses @{ SkuId = "00000000-0000-0000-0000-000000000000" } `
+  -RemoveLicenses @()
+```
+
+### Create a Microsoft 365 group
+
+```powershell
+New-MgGroup `
+  -DisplayName "Example Group" `
+  -MailEnabled:$true `
+  -MailNickname "examplegroup" `
+  -SecurityEnabled:$false `
+  -GroupTypes @("Unified")
+```
+
+### Add members to a group
+
+```powershell
+New-MgGroupMemberByRef
+```
+
+This cmdlet adds a user to a group by reference to the user object ID.
+
 ### Repository note
 
-Assignment 2 and Assignment 3 belong in the `assignments/` folder when you document them. Keep the write-ups original, sanitized, and focused on what you configured, how you validated it, and what you cleaned up.
+Assignment 2 and Assignment 3 belong in the `assignments/` folder when you document them. Keep write-ups original, sanitized, and focused on what you configured, how you validated it, and what you cleaned up.
 
 > [!TIP]
 > Memory hook: Portals are good for learning; Graph PowerShell is good for repeatable administration.
