@@ -1,1167 +1,784 @@
-# SC-300 Glossary
-
-This glossary defines recurring identity, access, cloud, and administration terms used throughout the SC-300 study guide. Entries are intentionally concise so section notes can link here without turning the glossary into a full lesson.
-
-## Active Directory Domain Services
-
-The traditional on-premises Microsoft directory service used to manage users, computers, groups, authentication, and policy for domain-joined Windows environments.
-
-Related: [Domain](#domain), [Domain Controller](#domain-controller), [Group Policy Object](#group-policy-object), [Microsoft Entra ID](#microsoft-entra-id)
-
-## Azure
-
-Microsoft's cloud platform for infrastructure, platforms, applications, networking, storage, security, and management services.
-
-Related: [IaaS](#iaas), [PaaS](#paas), [Microsoft Entra ID](#microsoft-entra-id)
-
-## Azure Active Directory
-
-The former name for Microsoft Entra ID. Older documentation, screenshots, portals, and exam wording may still use Azure AD or Azure Active Directory.
-
-Related: [Microsoft Entra ID](#microsoft-entra-id), [Tenant](#tenant)
-
-## Cloud-First
-
-An approach where new identity, device, application, and management designs start with cloud services instead of assuming a traditional on-premises domain is required.
-
-Related: [Microsoft Entra ID](#microsoft-entra-id), [Microsoft 365](#microsoft-365), [Intune](#intune)
-
-## Directory
-
-A structured identity store that holds objects such as users, groups, devices, applications, and related settings.
-
-Related: [Active Directory Domain Services](#active-directory-domain-services), [Microsoft Entra ID](#microsoft-entra-id), [Tenant](#tenant)
-
-## DMZ
-
-A perimeter network used to host public-facing services while limiting their access to the internal private network.
-
-Related: [Firewall](#firewall), [VPN](#vpn)
-
-## DNS
-
-Domain Name System. A name-resolution service that maps hostnames to IP addresses and is required for Active Directory clients to locate domain services.
-
-Related: [Active Directory Domain Services](#active-directory-domain-services), [Domain Controller](#domain-controller)
-
-## Domain
-
-A logical identity and management boundary in Active Directory Domain Services, commonly aligned to an organization's DNS namespace.
-
-Related: [Active Directory Domain Services](#active-directory-domain-services), [Domain Controller](#domain-controller)
-
-## Domain Controller
-
-A server running Active Directory Domain Services that stores a copy of the directory database and authenticates users and computers in the domain.
-
-Related: [Active Directory Domain Services](#active-directory-domain-services), [Kerberos](#kerberos), [DNS](#dns)
-
-## Enterprise Application
-
-The Microsoft Entra representation of an application instance in a tenant, commonly used to manage access, assignment, single sign-on, and application-specific settings.
-
-Related: [App Registration](#app-registration), [Service Principal](#service-principal), [Single Sign-On](#single-sign-on)
-
-## Firewall
-
-A network security control that permits or blocks traffic between networks, hosts, or security zones based on rules.
-
-Related: [DMZ](#dmz), [VPN](#vpn)
-
-## Group Policy Object
-
-A centralized Active Directory policy object used to apply configuration, security settings, and restrictions to domain-joined users and computers.
-
-Related: [Active Directory Domain Services](#active-directory-domain-services), [Domain Controller](#domain-controller)
-
-## Hybrid Identity
-
-An identity model that connects on-premises Active Directory with Microsoft Entra ID so users can access both on-premises and cloud resources with a more unified sign-in experience.
-
-Related: [Active Directory Domain Services](#active-directory-domain-services), [Microsoft Entra Connect](#microsoft-entra-connect), [Microsoft Entra ID](#microsoft-entra-id)
-
-## Hypervisor
-
-The software layer that allows multiple virtual machines to run on a physical host.
-
-Related: [Virtualization](#virtualization), [IaaS](#iaas)
-
-## IaaS
-
-Infrastructure as a Service. A cloud model where the provider offers infrastructure building blocks such as virtual machines, storage, networking, and firewalls.
-
-Related: [Azure](#azure), [Virtualization](#virtualization), [PaaS](#paas), [SaaS](#saas)
-
-## Intune
-
-Microsoft's cloud-based endpoint management service for managing devices, applications, compliance settings, and related controls.
-
-Related: [Microsoft 365](#microsoft-365), [Microsoft Entra ID](#microsoft-entra-id)
-
-## Kerberos
-
-The primary modern authentication protocol used in Active Directory domains.
-
-Related: [Active Directory Domain Services](#active-directory-domain-services), [Domain Controller](#domain-controller), [NTLM](#ntlm)
-
-## LDAP
-
-Lightweight Directory Access Protocol. A protocol used by applications and services to query and access directory data.
-
-Related: [Directory](#directory), [Active Directory Domain Services](#active-directory-domain-services)
-
-## Microsoft 365
-
-Microsoft's cloud productivity and collaboration service family, including services such as Exchange Online, SharePoint Online, Teams, OneDrive for Business, Office apps, and Intune.
-
-Related: [Microsoft Entra ID](#microsoft-entra-id), [SaaS](#saas), [PaaS](#paas)
-
-## Microsoft Entra Connect
-
-The Microsoft synchronization tool used to connect on-premises Active Directory identities with Microsoft Entra ID.
-
-Related: [Hybrid Identity](#hybrid-identity), [Active Directory Domain Services](#active-directory-domain-services), [Microsoft Entra ID](#microsoft-entra-id)
-
-## Microsoft Entra ID
-
-Microsoft's cloud identity and access management service. It provides users, groups, authentication, roles, application access, and policy enforcement for Microsoft cloud services and many integrated applications.
-
-Related: [Azure Active Directory](#azure-active-directory), [Tenant](#tenant), [Conditional Access](#conditional-access)
-
-## NTLM
-
-A legacy Microsoft authentication protocol still encountered in older compatibility scenarios.
-
-Related: [Kerberos](#kerberos), [Active Directory Domain Services](#active-directory-domain-services)
-
-## PaaS
-
-Platform as a Service. A cloud model where the provider manages the underlying infrastructure while administrators configure and manage the platform or service.
-
-Related: [IaaS](#iaas), [SaaS](#saas), [Microsoft Entra ID](#microsoft-entra-id)
-
-## RAS/RRAS
-
-Remote Access Service / Routing and Remote Access Service. Microsoft remote access technologies used for routing and VPN scenarios.
-
-Related: [VPN](#vpn), [Firewall](#firewall)
-
-## SaaS
-
-Software as a Service. A cloud model where users consume a finished application without managing the underlying infrastructure or platform.
-
-Related: [Microsoft 365](#microsoft-365), [IaaS](#iaas), [PaaS](#paas)
-
-## Tenant
-
-A dedicated Microsoft cloud directory instance for an organization. A tenant contains identities, groups, applications, roles, policies, and configuration for Microsoft Entra ID and related cloud services.
-
-Related: [Directory](#directory), [Microsoft Entra ID](#microsoft-entra-id), [Microsoft 365](#microsoft-365)
-
-## Virtualization
-
-The abstraction of physical compute resources so multiple virtual machines can run on shared hardware.
-
-Related: [Hypervisor](#hypervisor), [IaaS](#iaas)
-
-## VPN
-
-Virtual Private Network. An encrypted connection that allows remote users or networks to access private resources more securely.
-
-Related: [RAS/RRAS](#rasrras), [Firewall](#firewall), [DMZ](#dmz)
-
-## Domain Join
-
-The process of connecting a Windows computer to an AD DS domain so it can authenticate with domain accounts and receive domain-based policy.
-
-Related: [Domain](#domain), [Domain Controller](#domain-controller), [DNS](#dns)
-
-## Forest
-
-The top-level Active Directory Domain Services boundary that contains one or more domains and shares a common schema, configuration, and trust model.
-
-Related: [Domain](#domain), [Active Directory Domain Services](#active-directory-domain-services)
-
-## Global Catalog
-
-A domain controller role that stores searchable information about objects across an AD DS forest and helps with logon and directory lookup scenarios.
-
-Related: [Domain Controller](#domain-controller), [Forest](#forest)
-
-## DSRM
-
-Directory Services Restore Mode. A recovery mode for domain controllers that uses a dedicated restore password configured during domain controller promotion.
-
-Related: [Domain Controller](#domain-controller), [Active Directory Domain Services](#active-directory-domain-services)
-
-## NetBIOS Name
-
-A legacy short name used for compatibility with older Windows networking and domain naming behavior.
-
-Related: [Domain](#domain), [Active Directory Domain Services](#active-directory-domain-services)
-
-## SYSVOL
-
-A shared domain folder structure replicated between domain controllers and used for Group Policy and logon script data.
-
-Related: [Domain Controller](#domain-controller), [Group Policy Object](#group-policy-object)
-
-## SRV Record
-
-A DNS record type that helps clients locate services, including AD DS domain controllers.
-
-Related: [DNS](#dns), [Domain Controller](#domain-controller)
-
-## App Registration
-
-The Microsoft Entra object that defines an application's identity configuration, such as application ID, redirect URIs, API permissions, certificates, secrets, and authentication settings.
-
-Related: [Enterprise Application](#enterprise-application), [Service Principal](#service-principal), [Workload Identity](#workload-identity)
-
-## Conditional Access
-
-Microsoft Entra policy-based access control that evaluates signals such as user, location, device, application, and risk before allowing, blocking, or requiring additional controls for access.
-
-Related: [Microsoft Entra ID](#microsoft-entra-id), [Authentication](#authentication), [Identity Protection](#identity-protection)
-
-## Authentication
-
-The process of proving an identity, usually through credentials, multifactor authentication, certificates, or other verification methods.
-
-Related: [Kerberos](#kerberos), [Microsoft Entra ID](#microsoft-entra-id), [Conditional Access](#conditional-access)
-
-## Identity Protection
-
-Microsoft Entra features that detect, investigate, and respond to user and sign-in risk.
-
-Related: [Conditional Access](#conditional-access), [Microsoft Entra ID](#microsoft-entra-id)
-
-## Privileged Identity Management
-
-Microsoft Entra ID Governance capability for managing, approving, activating, and auditing privileged role access.
-
-Related: [Role-Based Access Control](#role-based-access-control), [Identity Governance](#identity-governance)
-
-## Active Assignment
-
-A privileged role assignment that is currently usable without a separate activation step.
-
-Related: [Privileged Identity Management](#privileged-identity-management), [Eligible Assignment](#eligible-assignment)
-
-## Eligible Assignment
-
-A privileged role assignment that allows a user to activate the role when needed, usually after satisfying controls such as MFA, justification, approval, or time limits.
-
-Related: [Privileged Identity Management](#privileged-identity-management), [Active Assignment](#active-assignment), [Just-in-Time Access](#just-in-time-access)
-
-## Just-in-Time Access
-
-An access model where privileged permissions are granted only when needed and only for a limited period.
-
-Related: [Privileged Identity Management](#privileged-identity-management), [Eligible Assignment](#eligible-assignment), [Least Privilege](#least-privilege)
-
-## Privilege Bracketing
-
-A security practice that grants elevated access for a defined task or time window and removes that access afterward.
-
-Related: [Privileged Identity Management](#privileged-identity-management), [Just-in-Time Access](#just-in-time-access), [Least Privilege](#least-privilege)
-
-## Privileged Role Administrator
-
-A Microsoft Entra role used to manage role assignments and privileged access configuration without granting full Global Administrator permissions.
-
-Related: [Privileged Identity Management](#privileged-identity-management), [Least Privilege](#least-privilege)
-
-## Identity Governance
-
-Microsoft Entra capabilities for governing access over time, including entitlement management, access reviews, lifecycle workflows, and privileged access controls.
-
-Related: [Entitlement Management](#entitlement-management), [Access Review](#access-review), [Privileged Identity Management](#privileged-identity-management)
-
-## Entitlement Management
-
-Microsoft Entra ID Governance capability used to package and manage access to groups, applications, and SharePoint sites through catalogs, access packages, policies, and approvals.
-
-Related: [Identity Governance](#identity-governance), [Access Review](#access-review), [Access Package](#access-package)
-
-## Access Package
-
-A policy-governed bundle of resource roles in entitlement management that can be requested, approved, assigned, expired, and reviewed as a unit.
-
-Related: [Entitlement Management](#entitlement-management), [Entitlement Catalog](#entitlement-catalog), [Access Package Policy](#access-package-policy)
-
-## Access Package Assignment
-
-The active grant that results when an identity receives an access package and its included resource roles.
-
-Related: [Access Package](#access-package), [Access Request](#access-request), [Entitlement Management](#entitlement-management)
-
-## Access Package Policy
-
-Rules on an access package that define who can request or receive access, whether approval is required, how long access lasts, and whether lifecycle controls apply.
-
-Related: [Access Package](#access-package), [Access Request](#access-request), [Entitlement Management](#entitlement-management)
-
-## Access Request
-
-A self-service or admin-driven request for an access package assignment.
-
-Related: [Access Package](#access-package), [Access Package Assignment](#access-package-assignment), [Identity Governance](#identity-governance)
-
-## Connected Organization
-
-An external organization represented in entitlement management so its users can be allowed to request access packages.
-
-Related: [External Identity](#external-identity), [B2B Collaboration](#b2b-collaboration), [Entitlement Management](#entitlement-management)
-
-## Entitlement Catalog
-
-A container in entitlement management that organizes related resources and access packages, often by project, department, or delegated ownership boundary.
-
-Related: [Access Package](#access-package), [Entitlement Management](#entitlement-management)
-
-## Terms of Use
-
-A Microsoft Entra agreement or notice that users can be required to accept through Conditional Access before accessing resources.
-
-Related: [Conditional Access](#conditional-access), [Identity Governance](#identity-governance)
-
-## Access Review
-
-A Microsoft Entra governance process for periodically reviewing whether users, guests, or privileged identities should keep access.
-
-Related: [Identity Governance](#identity-governance), [Entitlement Management](#entitlement-management)
-
-## Auto-Apply Access Review Results
-
-An access review setting that automatically applies review decisions to the target resource when the review completes.
-
-Related: [Access Review](#access-review), [Effective Permissions](#effective-permissions)
-
-## Decision Helper
-
-An access review recommendation signal that helps reviewers decide whether access should be approved or denied.
-
-Related: [Access Review](#access-review), [Sign-In Logs](#sign-in-logs)
-
-## Multi-Stage Access Review
-
-An access review design where two or more reviewer stages make decisions sequentially.
-
-Related: [Access Review](#access-review), [Identity Governance](#identity-governance)
-
-## Administrative Unit
-
-A Microsoft Entra container used to scope administrative control over selected users, groups, or devices.
-
-Related: [Microsoft Entra ID](#microsoft-entra-id), [Least Privilege](#least-privilege), [Effective Permissions](#effective-permissions)
-
-## Azure RBAC
-
-Azure role-based access control. The authorization system used to manage access to Azure resources at scopes such as management group, subscription, resource group, or resource.
-
-Related: [Role-Based Access Control](#role-based-access-control), [Azure](#azure), [Least Privilege](#least-privilege)
-
-## Company Branding
-
-Microsoft Entra sign-in page customization for organization logos, colors, layout, and sign-in text.
-
-Related: [Microsoft Entra ID](#microsoft-entra-id), [Tenant](#tenant)
-
-## Custom Domain
-
-A verified domain name owned by an organization and added to a Microsoft tenant for sign-in names, email, and cloud services.
-
-Related: [Tenant](#tenant), [DNS](#dns), [Microsoft Entra ID](#microsoft-entra-id)
-
-## Custom Security Attribute
-
-A business-specific key-value attribute that can be defined and assigned to supported Microsoft Entra objects for filtering, access decisions, automation, or application logic.
-
-Related: [Microsoft Entra ID](#microsoft-entra-id), [Least Privilege](#least-privilege)
-
-## Device Identity
-
-A Microsoft Entra object that represents a device and can be used for access, compliance, management, and reporting decisions.
-
-Related: [Microsoft Entra Joined Device](#microsoft-entra-joined-device), [Microsoft Entra Registered Device](#microsoft-entra-registered-device), [Microsoft Entra Hybrid Joined Device](#microsoft-entra-hybrid-joined-device)
-
-## Dynamic Membership Group
-
-A group whose membership is automatically calculated from user or device attributes by using membership rules.
-
-Related: [Security Group](#security-group), [Microsoft 365 Group](#microsoft-365-group)
-
-## Effective Permissions
-
-The actual actions an identity can perform after role permissions, scope, and assignments are evaluated together.
-
-Related: [Role-Based Access Control](#role-based-access-control), [Administrative Unit](#administrative-unit), [Least Privilege](#least-privilege)
-
-## Group-Based Licensing
-
-A licensing approach where licenses are assigned to a group so eligible members receive the license through membership.
-
-Related: [Microsoft 365 Group](#microsoft-365-group), [Security Group](#security-group)
-
-## Guest User
-
-An external user invited into a tenant for collaboration, usually through Microsoft Entra B2B collaboration.
-
-Related: [Member User](#member-user), [Microsoft Entra ID](#microsoft-entra-id)
-
-## Mail-Enabled Security Group
-
-A group that can be used both for email distribution and for assigning access permissions.
-
-Related: [Security Group](#security-group), [Microsoft 365 Group](#microsoft-365-group)
-
-## Managed Identity
-
-An Azure-managed identity that lets an Azure resource authenticate to supported services without storing credentials in code.
-
-Related: [Service Principal](#service-principal), [Workload Identity](#workload-identity), [Azure](#azure)
-
-## Member User
+# SC-300 Glossary and Acronym Cram Sheet
+
+Use this page as a fast lookup while reviewing the section notes. Official Microsoft Learn references belong in the objective map or reference index, not inside every glossary entry.
+
+## High-Yield Acronyms
+
+| Acronym | Stands For | Exam Meaning |
+|---|---|---|
+| AD DS | Active Directory Domain Services | Traditional on-premises directory service for users, computers, groups, domains, Kerberos, LDAP, and Group Policy. |
+| AU | Administrative Unit | Scopes administration over selected users, groups, or devices. Not the same as a security group. |
+| B2B | Business-to-Business | External collaboration model where guests from another organization access your tenant resources. |
+| BYOD | Bring Your Own Device | Personal-device scenario often tied to device registration, Conditional Access, app protection, and compliance controls. |
+| CA | Conditional Access | Entra policy engine that evaluates signals and enforces allow, block, MFA, device, session, or terms-of-use controls. |
+| CAE | Continuous Access Evaluation | Rechecks important session conditions more quickly, such as account disablement, password change, or risk changes. |
+| CASB | Cloud Access Security Broker | Security control layer for visibility, threat detection, governance, and control over cloud app usage. |
+| CBA | Certificate-Based Authentication | Passwordless authentication using X.509 certificates, often with smart cards. |
+| DC | Domain Controller | AD DS server that authenticates domain users/computers and stores directory data. |
+| DLP | Data Loss Prevention | Controls that detect and reduce accidental or unauthorized data exposure. |
+| DMZ | Demilitarized Zone | Perimeter network used for public-facing services while protecting the internal network. |
+| DNS | Domain Name System | Resolves names to IP addresses and helps domain-joined clients locate AD DS services. |
+| FIDO2 | Fast IDentity Online 2 | Phishing-resistant passwordless standard used by security keys and passkeys. |
+| GSA | Global Secure Access | Microsoft Entra Security Service Edge solution for Internet Access and Private Access. |
+| IAM | Identity and Access Management | Broad discipline for identities, authentication, authorization, access policy, and governance. In Azure portals, IAM also commonly refers to Access Control. |
+| IdP | Identity Provider | System that authenticates users or workloads and issues identity tokens or assertions. |
+| JIT | Just-in-Time | Temporary access model used heavily with PIM. Access is activated only when needed. |
+| KQL | Kusto Query Language | Query language for Azure Monitor, Log Analytics, Sentinel, Defender, and Entra log analysis. |
+| LDAP | Lightweight Directory Access Protocol | Directory access protocol used by apps and services to query directory data. |
+| MFA | Multi-Factor Authentication | Authentication with two or more factor types: know, have, or are. |
+| MSA | Managed Service Account | AD DS service account type for Windows services or scheduled tasks with managed password behavior. |
+| OATH | Open Authentication | Token standard used for one-time passcodes. Do not confuse with OAuth. |
+| OAuth 2.0 | Open Authorization 2.0 | Authorization framework for delegated API/resource access using tokens. |
+| OIDC | OpenID Connect | Identity layer on top of OAuth 2.0 used for modern app sign-in. |
+| PIM | Privileged Identity Management | Entra governance feature for eligible, time-bound, approved, and audited privileged access. |
+| RBAC | Role-Based Access Control | Authorization model where permissions are granted through roles at a scope. |
+| SAML | Security Assertion Markup Language | Federation protocol commonly used for enterprise SSO with SaaS apps. |
+| SCIM | System for Cross-domain Identity Management | Standard for automated user/group provisioning into SaaS apps. |
+| SIEM | Security Information and Event Management | Central platform for collecting, correlating, and investigating security events. |
+| SOAR | Security Orchestration, Automation, and Response | Automation layer for response workflows, often paired with SIEM. |
+| SSE | Security Service Edge | Cloud-delivered security model that includes secure web gateway and private access patterns. |
+| SSPR | Self-Service Password Reset | Lets users reset or unlock their own accounts after identity verification. |
+| SWG | Secure Web Gateway | Protects web/SaaS access with filtering, inspection, and policy enforcement. |
+| TAP | Temporary Access Pass | Time-limited passcode used for onboarding, recovery, or registering stronger auth methods. |
+| ToU | Terms of Use | Legal or compliance notice users must accept, enforced through Conditional Access. |
+| TOTP | Time-Based One-Time Password | Time-rotating one-time code used by authenticator apps or hardware/software OATH tokens. |
+| UPN | User Principal Name | User sign-in name, usually formatted like an email address. |
+| VPN | Virtual Private Network | Encrypted remote access method for private network resources. |
+| WHfB | Windows Hello for Business | Passwordless Windows sign-in using PIN or biometrics tied to the device. |
+| WS-Fed | WS-Federation | Federation protocol used in some Microsoft and enterprise identity scenarios. |
+
+## Core Identity Terms
+
+### Microsoft Entra ID
+
+Microsoft's cloud identity and access management service. It provides users, groups, devices, authentication, roles, application access, and policy enforcement for Microsoft cloud services and integrated apps.
+
+### Azure Active Directory
+
+The former name for Microsoft Entra ID. Older screenshots, portals, scripts, docs, and exam wording may still say Azure AD.
+
+### Tenant
+
+A dedicated Microsoft cloud directory instance for an organization. It contains identities, groups, apps, devices, roles, policies, domains, and configuration.
+
+### Directory
+
+A structured identity store that holds objects such as users, groups, devices, applications, roles, and related settings.
+
+### Member User
 
 An internal user account in a Microsoft Entra tenant, usually representing an employee or organizational user.
 
-Related: [Guest User](#guest-user), [User Principal Name](#user-principal-name)
+### Guest User
 
-## Microsoft 365 Group
+An external user invited into a tenant for collaboration, usually through Microsoft Entra External ID or B2B collaboration.
 
-A collaboration group that can provide shared Microsoft 365 resources such as mailbox, calendar, SharePoint site, Planner, and Teams-backed collaboration.
+### Identity Provider
 
-Related: [Security Group](#security-group), [Dynamic Membership Group](#dynamic-membership-group)
+A system that manages and authenticates identities. Microsoft Entra ID, AD FS, and third-party federation systems can act as identity providers.
 
-## Microsoft Entra Hybrid Joined Device
+### Authentication
 
-A device joined to on-premises Active Directory and also represented in Microsoft Entra ID.
+The process of proving who you are through passwords, MFA, certificates, passkeys, tokens, or other methods.
 
-Related: [Device Identity](#device-identity), [Hybrid Identity](#hybrid-identity)
+### Authorization
 
-## Microsoft Entra Joined Device
+The process of deciding what an authenticated identity is allowed to access or do.
 
-A device joined directly to Microsoft Entra ID, commonly used for organization-owned cloud-managed devices.
+### Single Sign-On
 
-Related: [Device Identity](#device-identity), [Microsoft Entra ID](#microsoft-entra-id)
+An authentication experience where a user signs in once and can access connected applications without repeatedly entering credentials.
 
-## Microsoft Entra Registered Device
+### Zero Trust
 
-A device registered with Microsoft Entra ID, commonly used for BYOD or personal-device scenarios where the user still signs in locally or personally.
+A security model that assumes no implicit trust and continuously verifies identity, device, risk, location, app, and session context.
 
-Related: [Device Identity](#device-identity), [Microsoft Entra ID](#microsoft-entra-id)
+### Least Privilege
 
-## Microsoft Graph
+A security principle that grants only the permissions needed to perform a task, and no more.
 
-Microsoft's unified API for accessing and managing Microsoft cloud services and data.
+## Microsoft Entra Administration
 
-Related: [Microsoft Graph PowerShell](#microsoft-graph-powershell), [Microsoft Entra ID](#microsoft-entra-id)
+### Administrative Unit
 
-## Microsoft Graph PowerShell
+A container used to scope administrative control over selected users, groups, or devices. It is for delegated administration, not normal app/resource access.
 
-PowerShell modules that use Microsoft Graph to manage Microsoft cloud services through Graph cmdlets.
+### Restricted Administrative Unit
 
-Related: [Microsoft Graph](#microsoft-graph), [User Principal Name](#user-principal-name)
+An administrative unit that protects its members from management by broader tenant administrators unless those admins are explicitly assigned to the restricted unit.
 
-## Role-Based Access Control
+### Microsoft Entra Role
 
-An authorization model where permissions are assigned through roles rather than directly granting every permission to each user.
+A role used to manage Microsoft Entra, Microsoft 365, or identity administration tasks, such as User Administrator or Global Reader.
 
-Related: [Privileged Identity Management](#privileged-identity-management), [Microsoft Entra ID](#microsoft-entra-id)
+### Global Administrator
 
-## Least Privilege
+The most powerful Microsoft Entra administrator role. It should be tightly limited and protected with strong controls.
 
-A security principle that grants only the permissions required to perform a task, and no more.
+### Global Reader
 
-Related: [Role-Based Access Control](#role-based-access-control), [Privileged Identity Management](#privileged-identity-management), [Administrative Unit](#administrative-unit)
+A read-only role for broad tenant visibility without write permissions.
 
-## Restricted Administrative Unit
+### Privileged Role Administrator
 
-An administrative unit that protects its members from management by broader tenant administrators unless those administrators are explicitly assigned to the restricted unit.
+A role used to manage role assignments and privileged access configuration without granting full Global Administrator permissions.
 
-Related: [Administrative Unit](#administrative-unit), [Microsoft Entra ID](#microsoft-entra-id)
+### Security Group
 
-## Security Defaults
+A group used mainly for assigning access to resources or policies. It can include users, devices, or service principals.
 
-Baseline Microsoft Entra security settings that help protect tenants with common controls such as requiring stronger authentication for administrative access.
+### Microsoft 365 Group
 
-Related: [Microsoft Entra ID](#microsoft-entra-id), [Conditional Access](#conditional-access), [Authentication](#authentication)
+A collaboration group that can provide shared Microsoft 365 resources such as mailbox, calendar, SharePoint site, Planner, and Teams.
 
-## Security Group
+### Dynamic Membership Group
 
-A group used primarily for assigning access to resources or policies. In Microsoft Entra ID, security groups can include users, devices, or service principals.
+A group whose membership is calculated automatically from user or device attributes.
 
-Related: [Dynamic Membership Group](#dynamic-membership-group), [Mail-Enabled Security Group](#mail-enabled-security-group)
+### Mail-Enabled Security Group
 
-## Service Principal
+A group that can receive email and also be used for permissions.
 
-The tenant-local security identity used by an application or service to access resources.
+### Custom Security Attribute
 
-Related: [App Registration](#app-registration), [Enterprise Application](#enterprise-application), [Workload Identity](#workload-identity)
+A business-specific key-value attribute that can be assigned to supported Entra objects for filtering, automation, access decisions, or app logic.
 
-## Single Sign-On
+### Custom Domain
 
-An authentication experience where a user signs in once and can access multiple connected applications without repeatedly entering credentials.
+A verified domain name owned by an organization and added to a Microsoft tenant for sign-in names, email, and cloud services.
 
-Related: [Enterprise Application](#enterprise-application), [Microsoft Entra ID](#microsoft-entra-id)
+### Company Branding
 
-## User Principal Name
+Customization of the Microsoft Entra sign-in page with organization logos, colors, layout, and sign-in text.
 
-The sign-in name for a user in Microsoft Entra ID, usually formatted like an email address.
+## Hybrid Identity and AD DS
 
-Related: [Member User](#member-user), [Custom Domain](#custom-domain)
+### Active Directory Domain Services
 
-## Workload Identity
+The traditional on-premises Microsoft directory service used to manage users, computers, groups, domains, authentication, and Group Policy.
 
-An identity used by software workloads, services, scripts, automations, or applications rather than by a human user.
+### Domain
 
-Related: [Service Principal](#service-principal), [App Registration](#app-registration)
+A logical AD DS identity and management boundary, commonly aligned to an organization's DNS namespace.
 
-## B2B Collaboration
+### Forest
 
-Microsoft Entra External ID capability that lets an organization invite external users into its tenant so they can access shared apps and resources with their own identities.
+The top-level AD DS boundary that contains one or more domains and shares a common schema, configuration, and trust model.
 
-Related: [Guest User](#guest-user), [External Identity](#external-identity), [Cross-Tenant Access Settings](#cross-tenant-access-settings)
+### Domain Controller
 
-## B2B Direct Connect
+A server running AD DS that stores directory data and authenticates users and computers in the domain.
 
-A Microsoft Entra cross-tenant collaboration model used for direct organization-to-organization scenarios such as Teams shared channels.
+### Global Catalog
 
-Related: [Cross-Tenant Access Settings](#cross-tenant-access-settings), [Inbound Access](#inbound-access), [Outbound Access](#outbound-access)
+A domain controller role that stores searchable information about objects across an AD DS forest.
 
-## Cross-Tenant Access Settings
+### Group Policy Object
 
-Microsoft Entra settings that control inbound and outbound collaboration, trust, and access behavior between tenants.
+A centralized AD DS policy object used to apply configuration, security settings, and restrictions to domain-joined users and computers.
 
-Related: [Tenant](#tenant), [B2B Collaboration](#b2b-collaboration), [B2B Direct Connect](#b2b-direct-connect)
+### SYSVOL
 
-## Cross-Tenant Synchronization
+A shared domain folder structure replicated between domain controllers and used for Group Policy and logon scripts.
 
-Microsoft Entra provisioning capability that automates creating, updating, and removing B2B collaboration users across tenants.
+### Kerberos
 
-Related: [B2B Collaboration](#b2b-collaboration), [Tenant](#tenant), [Cross-Tenant Access Settings](#cross-tenant-access-settings)
+The primary modern authentication protocol used in AD DS domains.
 
-## Email One-Time Passcode
+### NTLM
 
-An external identity authentication method where a guest user receives a temporary code by email to complete sign-in.
+A legacy Microsoft authentication protocol still encountered in older compatibility scenarios.
 
-Related: [Guest User](#guest-user), [Identity Provider](#identity-provider), [B2B Collaboration](#b2b-collaboration)
+### Microsoft Entra Connect
 
-## External Collaboration Settings
+Synchronization tooling used to connect on-premises AD DS identities with Microsoft Entra ID.
 
-Microsoft Entra settings that control guest visibility, who can invite guests, self-service sign-up, guest leave behavior, and collaboration domain restrictions.
+### Hybrid Identity
 
-Related: [Guest User](#guest-user), [B2B Collaboration](#b2b-collaboration), [External Identity](#external-identity)
+An identity model connecting on-premises AD DS with Microsoft Entra ID so users can access on-premises and cloud resources with a more unified sign-in experience.
 
-## External Identity
+### Password Writeback
+
+A hybrid identity capability that writes password changes or resets from Microsoft Entra ID back to on-premises AD DS.
+
+### Domain Join
+
+The process of connecting a Windows computer to an AD DS domain so it can authenticate with domain accounts and receive domain policies.
+
+## External Identities
+
+### External Identity
 
 An identity from outside the organization that is allowed to access resources through Microsoft Entra External ID features.
 
-Related: [Guest User](#guest-user), [B2B Collaboration](#b2b-collaboration), [Identity Provider](#identity-provider)
+### B2B Collaboration
 
-## Federation
+Microsoft Entra External ID capability that lets an organization invite external users into its tenant so they can access shared apps and resources with their own identities.
 
-An identity trust relationship where one identity provider authenticates users and another system accepts that authentication for access.
+### B2B Direct Connect
 
-Related: [Identity Provider](#identity-provider), [SAML](#saml), [WS-Fed](#ws-fed), [OpenID Connect](#openid-connect)
+A cross-tenant collaboration model used for direct organization-to-organization scenarios such as Teams shared channels.
 
-## Guest Inviter
+### Cross-Tenant Access Settings
 
-A Microsoft Entra role that allows a user to invite external guest users into the tenant without granting broader user administration rights.
+Settings that control inbound and outbound collaboration, trust, and access behavior between tenants.
 
-Related: [Guest User](#guest-user), [B2B Collaboration](#b2b-collaboration), [Least Privilege](#least-privilege)
+### Inbound Access
 
-## Identity Provider
+Controls what external users, groups, applications, or services from another tenant can do in your tenant.
 
-A system that creates, manages, and authenticates identities for users or applications.
+### Outbound Access
 
-Related: [Authentication](#authentication), [Federation](#federation), [Microsoft Entra ID](#microsoft-entra-id)
+Controls what users and groups from your tenant can do in another tenant.
 
-## Inbound Access
+### Cross-Tenant Synchronization
 
-Cross-tenant access controls that determine what external users, groups, applications, or services from another tenant can do in your tenant.
+Provisioning capability that automates creating, updating, and removing B2B collaboration users across tenants.
 
-Related: [Cross-Tenant Access Settings](#cross-tenant-access-settings), [Outbound Access](#outbound-access), [Tenant](#tenant)
+### External Collaboration Settings
 
-## OpenID Connect
+Settings that control guest visibility, who can invite guests, self-service sign-up, guest leave behavior, and collaboration domain restrictions.
 
-An identity protocol built on OAuth 2.0 that is commonly used for modern application sign-in.
+### Email One-Time Passcode
 
-Related: [Identity Provider](#identity-provider), [Federation](#federation), [Authentication](#authentication)
+An external identity authentication method where a guest receives a temporary code by email to complete sign-in.
 
-## Outbound Access
+### Guest Inviter
 
-Cross-tenant access controls that determine what users and groups from your tenant can do in another tenant.
+A Microsoft Entra role that allows inviting guest users without granting broader user administration rights.
 
-Related: [Cross-Tenant Access Settings](#cross-tenant-access-settings), [Inbound Access](#inbound-access), [Tenant](#tenant)
+## Authentication and Access Management
 
-## SAML
+### Multi-Factor Authentication
 
-Security Assertion Markup Language. A federation protocol commonly used for enterprise single sign-on and external identity provider integration.
+Authentication using two or more factor types: something you know, something you have, or something you are.
 
-Related: [Federation](#federation), [Identity Provider](#identity-provider), [Single Sign-On](#single-sign-on)
+### Authentication Strength
 
-## Tenant Restrictions
+A Conditional Access control that defines which authentication methods or method combinations are acceptable for a resource.
 
-Controls that restrict access to specified external tenants or applications, helping organizations limit collaboration with untrusted tenants.
+### Certificate-Based Authentication
 
-Related: [Tenant](#tenant), [Cross-Tenant Access Settings](#cross-tenant-access-settings), [Outbound Access](#outbound-access)
+Passwordless authentication using X.509 certificates, often with smart cards.
 
-## WS-Fed
-
-WS-Federation. A federation protocol used in some Microsoft and enterprise identity scenarios.
-
-Related: [Federation](#federation), [Identity Provider](#identity-provider), [SAML](#saml)
-
-## Access Token
-
-A signed token issued by Microsoft Entra ID that allows a client or application to access a protected API or resource.
-
-Related: [OAuth 2.0](#oauth-20), [Refresh Token](#refresh-token), [ID Token](#id-token)
-
-## Authentication Strength
-
-A Conditional Access control that specifies which combinations of authentication methods are acceptable for accessing a resource.
-
-Related: [Multi-Factor Authentication](#multi-factor-authentication), [Conditional Access](#conditional-access), [FIDO2](#fido2)
-
-## Certificate-Based Authentication
-
-A passwordless authentication method that uses X.509 certificates, often with smart cards, to authenticate users.
-
-Related: [Authentication](#authentication), [Smart Card](#smart-card), [Multi-Factor Authentication](#multi-factor-authentication)
-
-## FIDO2
+### FIDO2
 
 A phishing-resistant passwordless authentication standard used by security keys and passkeys.
 
-Related: [Passkey](#passkey), [Authentication Strength](#authentication-strength), [Multi-Factor Authentication](#multi-factor-authentication)
-
-## ID Token
-
-A signed token that tells an application who the authenticated user is.
-
-Related: [OpenID Connect](#openid-connect), [Access Token](#access-token), [Authentication](#authentication)
-
-## Multi-Factor Authentication
-
-An authentication requirement that uses two or more different factor types, such as something you know, something you have, or something you are.
-
-Related: [Authentication](#authentication), [Conditional Access](#conditional-access), [Authentication Strength](#authentication-strength)
-
-## OATH Token
-
-A hardware or software token that generates one-time passcodes for authentication.
-
-Related: [Multi-Factor Authentication](#multi-factor-authentication), [TOTP](#totp), [Authentication](#authentication)
-
-## OAuth 2.0
-
-An authorization framework commonly used to grant delegated access to APIs and resources by using access tokens.
-
-Related: [Access Token](#access-token), [OpenID Connect](#openid-connect), [Microsoft Graph](#microsoft-graph)
-
-## Passkey
+### Passkey
 
 A passwordless credential based on FIDO2/WebAuthn that uses cryptographic keys instead of a shared password.
 
-Related: [FIDO2](#fido2), [Authentication](#authentication), [Authentication Strength](#authentication-strength)
+### Windows Hello for Business
 
-## Password Writeback
+Passwordless Windows sign-in using a PIN or biometrics tied to the device and backed by asymmetric keys.
 
-A hybrid identity capability that writes password changes or resets from Microsoft Entra ID back to on-premises Active Directory Domain Services.
+### OATH Token
 
-Related: [Self-Service Password Reset](#self-service-password-reset), [Hybrid Identity](#hybrid-identity), [Microsoft Entra Connect](#microsoft-entra-connect)
+A hardware or software token that generates one-time passcodes for authentication.
 
-## Refresh Token
+### Temporary Access Pass
 
-A token used to request new access tokens without prompting the user to sign in again every time.
+A time-limited passcode created by an admin to help users sign in, recover access, or register stronger authentication methods.
 
-Related: [Access Token](#access-token), [OAuth 2.0](#oauth-20), [Single Sign-On](#single-sign-on)
+### Self-Service Password Reset
 
-## Self-Service Password Reset
+A feature that lets users reset or unlock their own accounts after verifying identity with approved authentication methods.
 
-A Microsoft Entra feature that lets users reset or unlock their own accounts after verifying their identity with approved authentication methods.
+### Security Defaults
 
-Related: [Password Writeback](#password-writeback), [Authentication](#authentication), [Multi-Factor Authentication](#multi-factor-authentication)
+Baseline Microsoft Entra security settings that help protect tenants with common controls such as requiring stronger authentication.
 
-## Smart Card
+### Legacy Authentication
 
-A physical card containing a certificate or credential used for strong authentication.
+Older authentication protocols or clients that do not support modern controls such as MFA and Conditional Access in the same way modern protocols do.
 
-Related: [Certificate-Based Authentication](#certificate-based-authentication), [Authentication](#authentication)
+### Conditional Access
 
-## Temporary Access Pass
+Microsoft Entra policy-based access control that evaluates signals such as user, location, device, application, and risk before allowing, blocking, or requiring extra controls.
 
-A time-limited passcode created by an administrator to help users sign in, recover access, or register stronger authentication methods.
+### Named Location
 
-Related: [Self-Service Password Reset](#self-service-password-reset), [Authentication](#authentication), [FIDO2](#fido2)
+A Conditional Access location object representing known IP ranges or countries/regions for policy decisions.
 
-## TOTP
+### Grant Control
 
-Time-based One-Time Password. A code that changes on a time interval and is generated by an authenticator app or token.
+The Conditional Access result that blocks access or grants access only after requirements such as MFA, compliant device, or authentication strength are satisfied.
 
-Related: [OATH Token](#oath-token), [Multi-Factor Authentication](#multi-factor-authentication)
+### Session Control
 
-## Windows Hello for Business
+A Conditional Access control that affects the session after access is granted, such as sign-in frequency, persistent browser behavior, or app control.
 
-A passwordless Windows sign-in method that uses a PIN or biometrics tied to the device and backed by asymmetric keys.
+### Report-Only Mode
 
-Related: [Authentication](#authentication), [FIDO2](#fido2), [Authentication Strength](#authentication-strength)
+A Conditional Access policy state that logs what a policy would have done without enforcing the result.
 
-## Authentication Context
-
-A Conditional Access target that lets an application request policy enforcement for a specific sensitive action or area inside the app.
-
-Related: [Conditional Access](#conditional-access), [Authentication Strength](#authentication-strength)
-
-## Continuous Access Evaluation
-
-A Microsoft Entra capability that can revoke or reevaluate access more quickly when important user, session, or risk conditions change.
-
-Related: [Conditional Access](#conditional-access), [Access Token](#access-token), [Session Control](#session-control)
-
-## Emergency Access Account
-
-A highly protected break-glass administrator account used to regain tenant access if normal administrative sign-in is disrupted.
-
-Related: [Conditional Access](#conditional-access), [Least Privilege](#least-privilege), [Privileged Identity Management](#privileged-identity-management)
-
-## Grant Control
-
-The Conditional Access result that determines whether access is blocked or granted only after requirements such as MFA, compliant device, or authentication strength are satisfied.
-
-Related: [Conditional Access](#conditional-access), [Multi-Factor Authentication](#multi-factor-authentication), [Authentication Strength](#authentication-strength)
-
-## Legacy Authentication
-
-Older authentication protocols or clients that do not support modern authentication controls such as MFA and Conditional Access in the same way as modern protocols.
-
-Related: [Conditional Access](#conditional-access), [Multi-Factor Authentication](#multi-factor-authentication), [OAuth 2.0](#oauth-20)
-
-## Named Location
-
-A Conditional Access location object that represents known IP ranges or countries/regions for use in policy decisions.
-
-Related: [Conditional Access](#conditional-access), [Zero Trust](#zero-trust)
-
-## Report-Only Mode
-
-A Conditional Access policy state that logs what a policy would have done without enforcing the access decision.
-
-Related: [Conditional Access](#conditional-access), [Sign-In Logs](#sign-in-logs)
-
-## Session Control
-
-A Conditional Access control that affects the user session after access is granted, such as sign-in frequency, persistent browser behavior, or app control.
-
-Related: [Conditional Access](#conditional-access), [Continuous Access Evaluation](#continuous-access-evaluation)
-
-## Sign-In Logs
-
-Microsoft Entra logs that record sign-in activity, including authentication details, Conditional Access results, and failures.
-
-Related: [Conditional Access](#conditional-access), [Report-Only Mode](#report-only-mode), [Authentication](#authentication)
-
-## Audit Logs
-
-Microsoft Entra logs that record administrative and directory changes, including who performed an action, what changed, and whether it succeeded.
-
-Related: [Sign-In Logs](#sign-in-logs), [Microsoft Entra ID](#microsoft-entra-id)
-
-## Provisioning Logs
-
-Microsoft Entra logs that track automated user, group, and identity synchronization activity between connected systems.
-
-Related: [Automatic Provisioning](#automatic-provisioning), [SCIM](#scim), [Microsoft Entra ID](#microsoft-entra-id)
-
-## Diagnostic Settings
-
-Azure and Microsoft Entra configuration that routes selected logs and metrics to destinations such as Log Analytics, Storage, Event Hubs, or partner solutions.
-
-Related: [Log Analytics Workspace](#log-analytics-workspace), [Kusto Query Language](#kusto-query-language), [Event Hubs](#event-hubs)
-
-## Log Analytics Workspace
-
-An Azure Monitor workspace used to collect, store, query, and analyze log data with Kusto Query Language.
-
-Related: [Diagnostic Settings](#diagnostic-settings), [Kusto Query Language](#kusto-query-language), [Workbook](#workbook)
-
-## Event Hubs
-
-Azure event streaming service often used to send logs to external monitoring, SIEM, or analytics pipelines.
-
-Related: [Diagnostic Settings](#diagnostic-settings), [Log Analytics Workspace](#log-analytics-workspace)
-
-## Kusto Query Language
-
-Microsoft query language used to search, filter, summarize, and analyze log and telemetry data.
-
-Related: [Log Analytics Workspace](#log-analytics-workspace), [Workbook](#workbook), [Sign-In Logs](#sign-in-logs)
-
-## Workbook
-
-An interactive Azure Monitor or Microsoft Entra dashboard that combines queries, charts, parameters, text, and visual reports.
-
-Related: [Kusto Query Language](#kusto-query-language), [Log Analytics Workspace](#log-analytics-workspace)
-
-## Identity Secure Score
-
-A Microsoft Entra posture score that measures identity security configuration against Microsoft recommendations.
-
-Related: [Microsoft Entra ID](#microsoft-entra-id), [Zero Trust](#zero-trust), [Conditional Access](#conditional-access)
-
-## Sign-In Risk
-
-A Microsoft Entra ID Protection signal that estimates the likelihood that a specific sign-in attempt is suspicious or compromised.
-
-Related: [Identity Protection](#identity-protection), [Conditional Access](#conditional-access), [User Risk](#user-risk)
-
-## User Risk
-
-A Microsoft Entra ID Protection signal that estimates the likelihood that a user identity is compromised.
-
-Related: [Identity Protection](#identity-protection), [Conditional Access](#conditional-access), [Sign-In Risk](#sign-in-risk)
-
-## What If
+### What If
 
 A Conditional Access troubleshooting tool that simulates whether policies would apply under selected user, app, device, location, and risk conditions.
 
-Related: [Conditional Access](#conditional-access), [Report-Only Mode](#report-only-mode)
+### Terms of Use
 
-## Zero Trust
+A legal or compliance agreement users can be required to accept through Conditional Access before accessing resources.
 
-A security model that assumes no implicit trust and continuously verifies identity, device, risk, location, and access context.
+## Identity Protection
 
-Related: [Conditional Access](#conditional-access), [Authentication](#authentication), [Least Privilege](#least-privilege)
+### Identity Protection
 
-## Leaked Credentials
+Microsoft Entra features that detect, investigate, and respond to user and sign-in risk.
 
-Credentials that have appeared in a known breach, dump, or threat intelligence source and may indicate that an account is compromised.
+### User Risk
 
-Related: [Identity Protection](#identity-protection), [User Risk](#user-risk), [Authentication](#authentication)
+The likelihood that a user account itself is compromised.
 
-## Password Spray
+### Sign-In Risk
 
-An attack where an adversary tries one or a few common passwords against many accounts to avoid lockout thresholds.
+The likelihood that a specific sign-in attempt is suspicious or compromised.
 
-Related: [Identity Protection](#identity-protection), [Sign-In Risk](#sign-in-risk), [Microsoft Entra ID](#microsoft-entra-id)
+### Risk Detection
 
-## Risk Detection
+A signal or event that contributes to user risk or sign-in risk.
 
-A Microsoft Entra Identity Protection signal or event that contributes to user risk or sign-in risk.
+### Risky User
 
-Related: [Identity Protection](#identity-protection), [Risky Sign-In](#risky-sign-in), [Risky User](#risky-user)
+A user account that Microsoft Entra evaluates as potentially compromised.
 
-## Risky Sign-In
+### Risky Sign-In
 
-A specific sign-in attempt that Microsoft Entra evaluates as suspicious or potentially compromised.
+A specific sign-in attempt that Microsoft Entra evaluates as suspicious.
 
-Related: [Sign-In Risk](#sign-in-risk), [Identity Protection](#identity-protection), [Conditional Access](#conditional-access)
+### Leaked Credentials
 
-## Risky User
+Credentials found in a known breach, dump, or threat intelligence source.
 
-A user account that Microsoft Entra evaluates as potentially compromised based on risk detections and identity behavior.
+### Password Spray
 
-Related: [User Risk](#user-risk), [Identity Protection](#identity-protection), [Risk Detection](#risk-detection)
+An attack where an adversary tries one or a few common passwords against many accounts.
 
-## Access Policy
+## Azure Roles and Resource Access
 
-In Azure Key Vault, a legacy vault-level authorization model that grants permissions to keys, secrets, or certificates directly inside the vault.
+### Azure RBAC
 
-Related: [Key Vault](#key-vault), [Azure RBAC](#azure-rbac), [Data Plane](#data-plane)
+Azure role-based access control for managing permissions to Azure resources at scopes such as management group, subscription, resource group, or resource.
 
-## Control Plane
+### Role Assignment
+
+A binding that grants a security principal a role at a specific scope.
+
+### Scope
+
+The boundary where an Azure RBAC assignment applies, such as management group, subscription, resource group, or resource.
+
+### Effective Permissions
+
+The actual actions an identity can perform after role permissions, scope, deny assignments, and assignments are evaluated together.
+
+### Control Plane
 
 The management layer used to create, configure, update, or delete Azure resources.
 
-Related: [Azure RBAC](#azure-rbac), [Data Plane](#data-plane), [Resource Group](#resource-group)
+### Data Plane
 
-## Custom Azure Role
+The access layer used to read, write, or use data inside an Azure resource, such as reading a secret or accessing storage data.
 
-An Azure RBAC role definition created by an organization when built-in roles do not provide the exact required permissions.
-
-Related: [Azure RBAC](#azure-rbac), [Role Assignment](#role-assignment), [Scope](#scope)
-
-## Data Plane
-
-The access layer used to read, write, or use data inside an Azure resource, such as reading a Key Vault secret or accessing storage data.
-
-Related: [Control Plane](#control-plane), [Key Vault](#key-vault), [Azure RBAC](#azure-rbac)
-
-## Deny Assignment
+### Deny Assignment
 
 An Azure assignment that explicitly blocks specific actions, even when role assignments would otherwise grant access.
 
-Related: [Azure RBAC](#azure-rbac), [Effective Permissions](#effective-permissions), [Role Assignment](#role-assignment)
+### Custom Azure Role
 
-## Key Vault
+An Azure RBAC role definition created when built-in roles do not provide the exact permissions needed.
 
-An Azure service used to securely store and manage secrets, keys, and certificates.
-
-Related: [Azure RBAC](#azure-rbac), [Access Policy](#access-policy), [Data Plane](#data-plane)
-
-## Resource Group
+### Resource Group
 
 A logical Azure container used to organize related resources and apply management, lifecycle, and access controls.
 
-Related: [Azure](#azure), [Azure RBAC](#azure-rbac), [Scope](#scope)
+### Key Vault
 
-## Role Assignment
+An Azure service used to securely store and manage secrets, keys, and certificates.
 
-An Azure RBAC binding that grants a security principal a role at a specific scope.
+### Key Vault Access Policy
 
-Related: [Azure RBAC](#azure-rbac), [Scope](#scope), [Effective Permissions](#effective-permissions)
-
-## Scope
-
-The boundary where an Azure RBAC role assignment applies, such as management group, subscription, resource group, or resource.
-
-Related: [Azure RBAC](#azure-rbac), [Role Assignment](#role-assignment), [Resource Group](#resource-group)
+A legacy vault-level authorization model that grants permissions to keys, secrets, or certificates directly inside the vault.
 
 ## Global Secure Access
 
-Microsoft Entra's unified Security Service Edge solution for identity-centric access to internet destinations, Microsoft services, and private applications.
+### Global Secure Access
 
-Related: [Microsoft Entra Internet Access](#microsoft-entra-internet-access), [Microsoft Entra Private Access](#microsoft-entra-private-access), [Zero Trust](#zero-trust)
+Microsoft Entra's Security Service Edge solution for identity-centric access to internet destinations, Microsoft services, and private applications.
 
-## Microsoft Entra Internet Access
+### Microsoft Entra Internet Access
 
 Global Secure Access capability that helps secure user access to internet and SaaS destinations through identity-aware controls.
 
-Related: [Global Secure Access](#global-secure-access), [Secure Web Gateway](#secure-web-gateway), [Traffic Forwarding Profile](#traffic-forwarding-profile)
+### Microsoft Entra Private Access
 
-## Microsoft Entra Private Access
+Global Secure Access capability that provides Zero Trust access to private applications and internal resources without broad traditional VPN access.
 
-Global Secure Access capability that provides Zero Trust access to private applications and internal resources without relying on broad traditional VPN access.
+### Traffic Forwarding Profile
 
-Related: [Global Secure Access](#global-secure-access), [Zero Trust](#zero-trust), [Traffic Forwarding Profile](#traffic-forwarding-profile)
+A Global Secure Access configuration that determines which traffic is acquired, forwarded, or bypassed for assigned users or groups.
 
-## Remote Network Connectivity
+### Secure Web Gateway
 
-A Global Secure Access capability for connecting branch or remote networks so traffic can be secured without installing the client on every individual device.
+A security service that protects web and SaaS access by applying filtering, inspection, and access controls.
 
-Related: [Global Secure Access](#global-secure-access), [Microsoft Entra Internet Access](#microsoft-entra-internet-access)
+### Security Service Edge
 
-## Secure Web Gateway
+A cloud-delivered security model that combines secure web gateway, private access, and cloud access controls near users and apps.
 
-A security service that protects users accessing web and SaaS destinations by applying filtering, inspection, and access controls.
-
-Related: [Microsoft Entra Internet Access](#microsoft-entra-internet-access), [Security Service Edge](#security-service-edge), [Web Content Filtering](#web-content-filtering)
-
-## Security Service Edge
-
-A cloud-delivered security model that combines services such as secure web gateway, private access, and cloud access controls near users and apps.
-
-Related: [Global Secure Access](#global-secure-access), [Secure Web Gateway](#secure-web-gateway), [Zero Trust](#zero-trust)
-
-## Traffic Forwarding Profile
-
-A Global Secure Access configuration that determines which categories of traffic are acquired, forwarded, or bypassed for assigned users or groups.
-
-Related: [Global Secure Access](#global-secure-access), [Microsoft Entra Private Access](#microsoft-entra-private-access), [Microsoft Entra Internet Access](#microsoft-entra-internet-access)
-
-## Web Content Filtering
+### Web Content Filtering
 
 A policy capability for allowing or blocking web access based on categories, domains, or security risk.
 
-Related: [Microsoft Entra Internet Access](#microsoft-entra-internet-access), [Secure Web Gateway](#secure-web-gateway)
+### Remote Network Connectivity
 
-## Managed Service Account
+A Global Secure Access capability for connecting branch or remote networks without installing the client on every device.
 
-An Active Directory service account type designed for Windows services or scheduled tasks with managed password behavior.
+## Workload Identities and App Registrations
 
-Related: [Active Directory Domain Services](#active-directory-domain-services), [Hybrid Identity](#hybrid-identity), [Workload Identity](#workload-identity)
+### Workload Identity
 
-## Standard User Account
+An identity used by software workloads, services, scripts, automations, or applications rather than by a human user.
 
-A normal human user account used for interactive sign-in and user-driven work.
+### Managed Identity
 
-Related: [Member User](#member-user), [Authentication](#authentication), [Least Privilege](#least-privilege)
+An Azure-managed identity that lets an Azure resource authenticate to supported services without storing credentials in code.
 
-## System-Assigned Managed Identity
+### System-Assigned Managed Identity
 
 A managed identity created for one Azure resource whose lifecycle is tied to that resource.
 
-Related: [Managed Identity](#managed-identity), [User-Assigned Managed Identity](#user-assigned-managed-identity), [Azure RBAC](#azure-rbac)
-
-## User-Assigned Managed Identity
+### User-Assigned Managed Identity
 
 A standalone managed identity created as an Azure resource that can be assigned to one or more supported Azure resources.
 
-Related: [Managed Identity](#managed-identity), [System-Assigned Managed Identity](#system-assigned-managed-identity), [Azure RBAC](#azure-rbac)
+### Service Principal
 
-## Workload Identity Federation
+The tenant-local security identity used by an application or service to access resources.
 
-An authentication approach that lets an external workload exchange a trusted token for Microsoft Entra tokens without storing long-lived secrets.
+### Managed Service Account
 
-Related: [Workload Identity](#workload-identity), [Service Principal](#service-principal), [OAuth 2.0](#oauth-20)
+An AD DS service account type designed for Windows services or scheduled tasks with managed password behavior.
 
-## Admin Consent
+### Standard User Account
 
-Consent granted by an administrator allowing an application to access data or permissions that users cannot approve on their own.
+A normal human user account used for interactive sign-in and user-driven work.
 
-Related: [User Consent](#user-consent), [Enterprise Application](#enterprise-application), [App Registration](#app-registration)
+### App Registration
 
-## App Collection
+The Microsoft Entra object that defines an application's identity configuration, such as application ID, redirect URIs, API permissions, certificates, secrets, and authentication settings.
 
-A My Apps grouping that organizes related enterprise applications for assigned users and groups.
+### Enterprise Application
 
-Related: [Enterprise Application](#enterprise-application), [Single Sign-On](#single-sign-on)
+The tenant representation of an application instance, used to manage access, assignment, SSO, provisioning, and application-specific settings.
 
-## App Role
-
-An application-defined role that can be assigned to users, groups, or service principals to control app-specific authorization.
-
-Related: [Enterprise Application](#enterprise-application), [App Registration](#app-registration), [Role Assignment](#role-assignment)
-
-## Application Proxy
-
-Microsoft Entra feature that publishes internal web applications securely for remote access through a cloud service and on-premises connector.
-
-Related: [Application Proxy Connector](#application-proxy-connector), [Enterprise Application](#enterprise-application), [Conditional Access](#conditional-access)
-
-## Application Proxy Connector
-
-A Windows Server component installed inside the corporate network that connects internal web apps to the Microsoft Entra Application Proxy cloud service.
-
-Related: [Application Proxy](#application-proxy), [Hybrid Identity](#hybrid-identity)
-
-## Automatic Provisioning
-
-Automated creation, update, and removal of users or groups in a target application from Microsoft Entra ID.
-
-Related: [Enterprise Application](#enterprise-application), [SCIM](#scim), [Identity Governance](#identity-governance)
-
-## SCIM
-
-System for Cross-domain Identity Management. A standard often used for automated user and group provisioning between identity providers and SaaS applications.
-
-Related: [Automatic Provisioning](#automatic-provisioning), [Enterprise Application](#enterprise-application)
-
-## User Consent
-
-Consent granted by a user allowing an application to access data or permissions that the organization allows users to approve.
-
-Related: [Admin Consent](#admin-consent), [Enterprise Application](#enterprise-application)
-
-## Application Permission
-
-An API permission that allows an application to act as itself without a signed-in user.
-
-Related: [API Permission](#api-permission), [Service Principal](#service-principal), [App Registration](#app-registration)
-
-## API Permission
-
-A permission requested by an app registration that allows an application to access an API such as Microsoft Graph or another protected resource.
-
-Related: [App Registration](#app-registration), [Delegated Permission](#delegated-permission), [Application Permission](#application-permission)
-
-## Claim
-
-A piece of information included in a token, such as a user attribute, app role, tenant, or permission value.
-
-Related: [ID Token](#id-token), [Access Token](#access-token), [App Role](#app-role)
-
-## Delegated Permission
-
-An API permission that allows an application to act on behalf of a signed-in user.
-
-Related: [API Permission](#api-permission), [OAuth 2.0](#oauth-20), [User Consent](#user-consent)
-
-## Redirect URI
+### Redirect URI
 
 The application URL where Microsoft Entra sends the authentication response after sign-in.
 
-Related: [App Registration](#app-registration), [OpenID Connect](#openid-connect), [OAuth 2.0](#oauth-20)
+### API Permission
 
-## Microsoft Defender for Cloud Apps
+A permission requested by an app registration that allows an application to access an API such as Microsoft Graph.
+
+### Delegated Permission
+
+An API permission that allows an application to act on behalf of a signed-in user.
+
+### Application Permission
+
+An API permission that allows an application to act as itself without a signed-in user.
+
+### Admin Consent
+
+Consent granted by an administrator allowing an application to access permissions users cannot approve on their own.
+
+### User Consent
+
+Consent granted by a user allowing an application to access data or permissions the organization permits users to approve.
+
+### Claim
+
+A piece of information included in a token, such as a user attribute, app role, tenant, or permission value.
+
+### App Role
+
+An application-defined role assigned to users, groups, or service principals to control app-specific authorization.
+
+### Access Token
+
+A signed token issued by Microsoft Entra ID that allows a client or application to access a protected API or resource.
+
+### ID Token
+
+A signed token that tells an application who the authenticated user is.
+
+### Refresh Token
+
+A token used to request new access tokens without prompting the user to sign in again every time.
+
+### OAuth 2.0
+
+An authorization framework commonly used to grant delegated access to APIs and resources by using access tokens.
+
+### OpenID Connect
+
+An identity protocol built on OAuth 2.0 and commonly used for modern application sign-in.
+
+### SAML
+
+A federation protocol commonly used for enterprise single sign-on and external identity provider integration.
+
+### Federation
+
+An identity trust relationship where one identity provider authenticates users and another system accepts that authentication for access.
+
+## Enterprise Applications
+
+### Application Proxy
+
+Microsoft Entra feature that publishes internal web applications securely through a cloud service and on-premises connector.
+
+### Application Proxy Connector
+
+A Windows Server component installed inside the corporate network that connects internal web apps to the Microsoft Entra Application Proxy cloud service.
+
+### Automatic Provisioning
+
+Automated creation, update, and removal of users or groups in a target application from Microsoft Entra ID.
+
+### SCIM
+
+A standard often used for automated user and group provisioning between identity providers and SaaS applications.
+
+### App Collection
+
+A My Apps grouping that organizes related enterprise applications for assigned users and groups.
+
+## Defender for Cloud Apps
+
+### Microsoft Defender for Cloud Apps
 
 Microsoft's cloud app security broker capability for discovering cloud app usage, monitoring SaaS activity, governing connected apps, applying policies, and controlling supported sessions.
 
-Related: [Cloud Access Security Broker](#cloud-access-security-broker), [Cloud Discovery](#cloud-discovery), [Conditional Access App Control](#conditional-access-app-control)
+### Cloud Discovery
 
-## Cloud Access Security Broker
+Capability that analyzes traffic and log data to identify cloud apps, users, IP addresses, traffic volume, and app risk.
 
-A security control layer that sits between users and cloud services to provide visibility, policy enforcement, threat detection, and governance for cloud app usage.
-
-Related: [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps), [Shadow IT](#shadow-it), [Cloud Discovery](#cloud-discovery)
-
-## Shadow IT
-
-Use of applications, cloud services, or technology outside approved organizational governance or IT visibility.
-
-Related: [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps), [Cloud Discovery](#cloud-discovery), [Unsanctioned App](#unsanctioned-app)
-
-## Cloud Discovery
-
-Defender for Cloud Apps capability that analyzes traffic and log data to identify cloud apps, users, IP addresses, traffic volume, and app risk.
-
-Related: [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps), [Cloud App Catalog](#cloud-app-catalog), [Log Collector](#log-collector)
-
-## App Connector
-
-A Defender for Cloud Apps integration that connects to supported cloud apps through APIs to collect app activity, files, events, and governance data.
-
-Related: [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps), [Cloud Discovery](#cloud-discovery)
-
-## Conditional Access App Control
-
-A Defender for Cloud Apps capability that applies real-time access and session controls to supported cloud application sessions.
-
-Related: [Conditional Access](#conditional-access), [Session Policy](#session-policy), [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps)
-
-## Session Policy
-
-A Defender for Cloud Apps policy type that controls or monitors what users can do inside a supported cloud app session after access is granted.
-
-Related: [Conditional Access App Control](#conditional-access-app-control), [Data Exfiltration](#data-exfiltration), [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps)
-
-## Cloud App Catalog
+### Cloud App Catalog
 
 Defender for Cloud Apps database that evaluates cloud applications by risk, security, compliance, legal, and operational characteristics.
 
-Related: [Cloud Discovery](#cloud-discovery), [Sanctioned App](#sanctioned-app), [Unsanctioned App](#unsanctioned-app)
+### Sanctioned App
 
-## Sanctioned App
+A cloud application that an organization has approved for use.
 
-A cloud application that an organization has approved for use and marked as allowed or trusted in Defender for Cloud Apps governance workflows.
-
-Related: [Unsanctioned App](#unsanctioned-app), [Cloud App Catalog](#cloud-app-catalog), [Shadow IT](#shadow-it)
-
-## Unsanctioned App
+### Unsanctioned App
 
 A cloud application that an organization has marked as disallowed or not approved for business use.
 
-Related: [Sanctioned App](#sanctioned-app), [Shadow IT](#shadow-it), [Cloud Discovery](#cloud-discovery)
+### App Connector
 
-## OAuth App Policy
+An integration that connects Defender for Cloud Apps to supported cloud apps through APIs.
 
-A Defender for Cloud Apps policy that monitors or alerts on OAuth-connected applications based on filters such as publisher, permissions, or app behavior.
+### Conditional Access App Control
 
-Related: [OAuth 2.0](#oauth-20), [Admin Consent](#admin-consent), [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps)
+A Defender for Cloud Apps capability that applies real-time access and session controls to supported cloud application sessions.
 
-## File Policy
+### Access Policy
 
-A Defender for Cloud Apps policy that monitors or governs cloud file activity, sharing, sensitivity, ownership, or exposure conditions.
+In Defender for Cloud Apps, a policy that controls whether a user can enter a cloud app session.
 
-Related: [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps), [Session Policy](#session-policy), [Data Exfiltration](#data-exfiltration)
+### Session Policy
 
-## Data Exfiltration
+In Defender for Cloud Apps, a policy that controls or monitors what users can do inside a cloud app session after access is granted.
+
+### File Policy
+
+A policy that monitors or governs cloud file activity, sharing, sensitivity, ownership, or exposure conditions.
+
+### OAuth App Policy
+
+A policy that monitors or alerts on OAuth-connected applications based on filters such as publisher, permissions, or app behavior.
+
+### Shadow IT
+
+Use of applications, cloud services, or technology outside approved organizational governance or IT visibility.
+
+### Data Exfiltration
 
 Unauthorized movement, copying, downloading, or sharing of organizational data outside approved boundaries.
 
-Related: [File Policy](#file-policy), [Session Policy](#session-policy), [Shadow IT](#shadow-it)
-
-## Log Collector
+### Log Collector
 
 A component or service used to collect logs from supported network devices or sources and forward them for Cloud Discovery analysis.
 
-Related: [Cloud Discovery](#cloud-discovery), [Snapshot Report](#snapshot-report), [Microsoft Defender for Cloud Apps](#microsoft-defender-for-cloud-apps)
-
-## Snapshot Report
+### Snapshot Report
 
 A Cloud Discovery report generated from a specific uploaded or collected set of traffic logs.
 
-Related: [Cloud Discovery](#cloud-discovery), [Log Collector](#log-collector)
+## Identity Governance
+
+### Entitlement Management
+
+Microsoft Entra ID Governance capability used to package and manage access to groups, applications, Teams, and SharePoint sites through catalogs, access packages, policies, and approvals.
+
+### Entitlement Catalog
+
+A container that organizes related resources and access packages, often by project, department, or delegated ownership boundary.
+
+### Access Package
+
+A policy-governed bundle of resource roles that can be requested, approved, assigned, expired, and reviewed as a unit.
+
+### Access Package Policy
+
+Rules defining who can request or receive an access package, whether approval is required, how long access lasts, and whether lifecycle controls apply.
+
+### Access Package Assignment
+
+The active grant that results when an identity receives an access package and its included resource roles.
+
+### Access Request
+
+A self-service or admin-driven request for an access package assignment.
+
+### Connected Organization
+
+An external organization represented in entitlement management so its users can request access packages.
+
+### Access Review
+
+A governance process for periodically reviewing whether users, guests, or privileged identities should keep access.
+
+### Auto-Apply Access Review Results
+
+An access review setting that automatically applies decisions to the target resource when the review completes.
+
+### Decision Helper
+
+An access review recommendation signal that helps reviewers decide whether access should be approved or denied.
+
+### Multi-Stage Access Review
+
+An access review design where two or more reviewer stages make decisions sequentially.
+
+### Privileged Identity Management
+
+Microsoft Entra ID Governance capability for managing, approving, activating, and auditing privileged role access.
+
+### Eligible Assignment
+
+A privileged role assignment that allows a user to activate the role when needed, usually after MFA, justification, approval, or time limits.
+
+### Active Assignment
+
+A privileged role assignment that is currently usable without a separate activation step.
+
+### Just-in-Time Access
+
+An access model where privileged permissions are granted only when needed and only for a limited period.
+
+### Privilege Bracketing
+
+A security practice that grants elevated access for a defined task or time window and removes that access afterward.
+
+### Emergency Access Account
+
+A highly protected break-glass administrator account used to regain tenant access if normal administrative sign-in is disrupted.
+
+## Monitoring, Logs, and Reporting
+
+### Sign-In Logs
+
+Microsoft Entra logs that record authentication activity, including success, failure, device details, Conditional Access results, and client app details.
+
+### Audit Logs
+
+Microsoft Entra logs that record administrative and directory changes, including who performed an action, what changed, and whether it succeeded.
+
+### Provisioning Logs
+
+Microsoft Entra logs that track automated user, group, and identity synchronization activity between connected systems.
+
+### Diagnostic Settings
+
+Configuration that routes selected logs and metrics to destinations such as Log Analytics, Storage, Event Hubs, or partner solutions.
+
+### Log Analytics Workspace
+
+An Azure Monitor workspace used to collect, store, query, and analyze log data with Kusto Query Language.
+
+### Event Hubs
+
+Azure event streaming service often used to send logs to external monitoring, SIEM, or analytics pipelines.
+
+### Kusto Query Language
+
+Microsoft query language used to search, filter, summarize, and analyze log and telemetry data.
+
+### Workbook
+
+An interactive Azure Monitor or Microsoft Entra dashboard that combines queries, charts, parameters, text, and visual reports.
+
+### Identity Secure Score
+
+A Microsoft Entra posture score that measures identity security configuration against Microsoft recommendations.
+
+## Cloud and Network Basics
+
+### Azure
+
+Microsoft's cloud platform for infrastructure, platforms, applications, networking, storage, security, and management services.
+
+### Microsoft 365
+
+Microsoft's cloud productivity and collaboration service family, including Exchange Online, SharePoint Online, Teams, OneDrive for Business, Office apps, and Intune.
+
+### Intune
+
+Microsoft's cloud-based endpoint management service for devices, applications, compliance settings, and related controls.
+
+### Microsoft Graph
+
+Microsoft's unified API for accessing and managing Microsoft cloud services and data.
+
+### IaaS
+
+Infrastructure as a Service. Cloud infrastructure building blocks such as virtual machines, storage, networking, and firewalls.
+
+### PaaS
+
+Platform as a Service. The provider manages infrastructure while administrators configure the platform or service.
+
+### SaaS
+
+Software as a Service. Users consume a finished application without managing the underlying infrastructure or platform.
+
+### Virtualization
+
+The abstraction of physical compute resources so multiple virtual machines can run on shared hardware.
+
+### Hypervisor
+
+The software layer that allows multiple virtual machines to run on a physical host.
+
+### Firewall
+
+A network security control that permits or blocks traffic between networks, hosts, or security zones based on rules.
+
+### VPN
+
+An encrypted connection that allows remote users or networks to access private resources more securely.
+
+### DMZ
+
+A perimeter network used to host public-facing services while limiting their access to the internal private network.
+
+### DNS
+
+Name-resolution service that maps hostnames to IP addresses and is required for AD DS clients to locate domain services.
+
+### SRV Record
+
+A DNS record type that helps clients locate services, including AD DS domain controllers.
