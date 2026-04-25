@@ -284,11 +284,95 @@ A verified domain name owned by an organization and added to a Microsoft tenant 
 
 Related: [Tenant](#tenant), [DNS](#dns), [Microsoft Entra ID](#microsoft-entra-id)
 
+## Custom Security Attribute
+
+A business-specific key-value attribute that can be defined and assigned to supported Microsoft Entra objects for filtering, access decisions, automation, or application logic.
+
+Related: [Microsoft Entra ID](#microsoft-entra-id), [Least Privilege](#least-privilege)
+
+## Device Identity
+
+A Microsoft Entra object that represents a device and can be used for access, compliance, management, and reporting decisions.
+
+Related: [Microsoft Entra Joined Device](#microsoft-entra-joined-device), [Microsoft Entra Registered Device](#microsoft-entra-registered-device), [Microsoft Entra Hybrid Joined Device](#microsoft-entra-hybrid-joined-device)
+
+## Dynamic Membership Group
+
+A group whose membership is automatically calculated from user or device attributes by using membership rules.
+
+Related: [Security Group](#security-group), [Microsoft 365 Group](#microsoft-365-group)
+
 ## Effective Permissions
 
 The actual actions an identity can perform after role permissions, scope, and assignments are evaluated together.
 
 Related: [Role-Based Access Control](#role-based-access-control), [Administrative Unit](#administrative-unit), [Least Privilege](#least-privilege)
+
+## Group-Based Licensing
+
+A licensing approach where licenses are assigned to a group so eligible members receive the license through membership.
+
+Related: [Microsoft 365 Group](#microsoft-365-group), [Security Group](#security-group)
+
+## Guest User
+
+An external user invited into a tenant for collaboration, usually through Microsoft Entra B2B collaboration.
+
+Related: [Member User](#member-user), [Microsoft Entra ID](#microsoft-entra-id)
+
+## Mail-Enabled Security Group
+
+A group that can be used both for email distribution and for assigning access permissions.
+
+Related: [Security Group](#security-group), [Microsoft 365 Group](#microsoft-365-group)
+
+## Managed Identity
+
+An Azure-managed identity that lets an Azure resource authenticate to supported services without storing credentials in code.
+
+Related: [Service Principal](#service-principal), [Workload Identity](#workload-identity), [Azure](#azure)
+
+## Member User
+
+An internal user account in a Microsoft Entra tenant, usually representing an employee or organizational user.
+
+Related: [Guest User](#guest-user), [User Principal Name](#user-principal-name)
+
+## Microsoft 365 Group
+
+A collaboration group that can provide shared Microsoft 365 resources such as mailbox, calendar, SharePoint site, Planner, and Teams-backed collaboration.
+
+Related: [Security Group](#security-group), [Dynamic Membership Group](#dynamic-membership-group)
+
+## Microsoft Entra Hybrid Joined Device
+
+A device joined to on-premises Active Directory and also represented in Microsoft Entra ID.
+
+Related: [Device Identity](#device-identity), [Hybrid Identity](#hybrid-identity)
+
+## Microsoft Entra Joined Device
+
+A device joined directly to Microsoft Entra ID, commonly used for organization-owned cloud-managed devices.
+
+Related: [Device Identity](#device-identity), [Microsoft Entra ID](#microsoft-entra-id)
+
+## Microsoft Entra Registered Device
+
+A device registered with Microsoft Entra ID, commonly used for BYOD or personal-device scenarios where the user still signs in locally or personally.
+
+Related: [Device Identity](#device-identity), [Microsoft Entra ID](#microsoft-entra-id)
+
+## Microsoft Graph
+
+Microsoft's unified API for accessing and managing Microsoft cloud services and data.
+
+Related: [Microsoft Graph PowerShell](#microsoft-graph-powershell), [Microsoft Entra ID](#microsoft-entra-id)
+
+## Microsoft Graph PowerShell
+
+PowerShell modules that use Microsoft Graph to manage Microsoft cloud services through Graph cmdlets.
+
+Related: [Microsoft Graph](#microsoft-graph), [User Principal Name](#user-principal-name)
 
 ## Role-Based Access Control
 
@@ -314,6 +398,12 @@ Baseline Microsoft Entra security settings that help protect tenants with common
 
 Related: [Microsoft Entra ID](#microsoft-entra-id), [Conditional Access](#conditional-access), [Authentication](#authentication)
 
+## Security Group
+
+A group used primarily for assigning access to resources or policies. In Microsoft Entra ID, security groups can include users, devices, or service principals.
+
+Related: [Dynamic Membership Group](#dynamic-membership-group), [Mail-Enabled Security Group](#mail-enabled-security-group)
+
 ## Service Principal
 
 The tenant-local security identity used by an application or service to access resources.
@@ -325,6 +415,12 @@ Related: [App Registration](#app-registration), [Enterprise Application](#enterp
 An authentication experience where a user signs in once and can access multiple connected applications without repeatedly entering credentials.
 
 Related: [Enterprise Application](#enterprise-application), [Microsoft Entra ID](#microsoft-entra-id)
+
+## User Principal Name
+
+The sign-in name for a user in Microsoft Entra ID, usually formatted like an email address.
+
+Related: [Member User](#member-user), [Custom Domain](#custom-domain)
 
 ## Workload Identity
 
