@@ -427,3 +427,99 @@ Related: [Member User](#member-user), [Custom Domain](#custom-domain)
 An identity used by software workloads, services, scripts, automations, or applications rather than by a human user.
 
 Related: [Service Principal](#service-principal), [App Registration](#app-registration)
+
+## B2B Collaboration
+
+Microsoft Entra External ID capability that lets an organization invite external users into its tenant so they can access shared apps and resources with their own identities.
+
+Related: [Guest User](#guest-user), [External Identity](#external-identity), [Cross-Tenant Access Settings](#cross-tenant-access-settings)
+
+## B2B Direct Connect
+
+A Microsoft Entra cross-tenant collaboration model used for direct organization-to-organization scenarios such as Teams shared channels.
+
+Related: [Cross-Tenant Access Settings](#cross-tenant-access-settings), [Inbound Access](#inbound-access), [Outbound Access](#outbound-access)
+
+## Cross-Tenant Access Settings
+
+Microsoft Entra settings that control inbound and outbound collaboration, trust, and access behavior between tenants.
+
+Related: [Tenant](#tenant), [B2B Collaboration](#b2b-collaboration), [B2B Direct Connect](#b2b-direct-connect)
+
+## Cross-Tenant Synchronization
+
+Microsoft Entra provisioning capability that automates creating, updating, and removing B2B collaboration users across tenants.
+
+Related: [B2B Collaboration](#b2b-collaboration), [Tenant](#tenant), [Cross-Tenant Access Settings](#cross-tenant-access-settings)
+
+## Email One-Time Passcode
+
+An external identity authentication method where a guest user receives a temporary code by email to complete sign-in.
+
+Related: [Guest User](#guest-user), [Identity Provider](#identity-provider), [B2B Collaboration](#b2b-collaboration)
+
+## External Collaboration Settings
+
+Microsoft Entra settings that control guest visibility, who can invite guests, self-service sign-up, guest leave behavior, and collaboration domain restrictions.
+
+Related: [Guest User](#guest-user), [B2B Collaboration](#b2b-collaboration), [External Identity](#external-identity)
+
+## External Identity
+
+An identity from outside the organization that is allowed to access resources through Microsoft Entra External ID features.
+
+Related: [Guest User](#guest-user), [B2B Collaboration](#b2b-collaboration), [Identity Provider](#identity-provider)
+
+## Federation
+
+An identity trust relationship where one identity provider authenticates users and another system accepts that authentication for access.
+
+Related: [Identity Provider](#identity-provider), [SAML](#saml), [WS-Fed](#ws-fed), [OpenID Connect](#openid-connect)
+
+## Guest Inviter
+
+A Microsoft Entra role that allows a user to invite external guest users into the tenant without granting broader user administration rights.
+
+Related: [Guest User](#guest-user), [B2B Collaboration](#b2b-collaboration), [Least Privilege](#least-privilege)
+
+## Identity Provider
+
+A system that creates, manages, and authenticates identities for users or applications.
+
+Related: [Authentication](#authentication), [Federation](#federation), [Microsoft Entra ID](#microsoft-entra-id)
+
+## Inbound Access
+
+Cross-tenant access controls that determine what external users, groups, applications, or services from another tenant can do in your tenant.
+
+Related: [Cross-Tenant Access Settings](#cross-tenant-access-settings), [Outbound Access](#outbound-access), [Tenant](#tenant)
+
+## OpenID Connect
+
+An identity protocol built on OAuth 2.0 that is commonly used for modern application sign-in.
+
+Related: [Identity Provider](#identity-provider), [Federation](#federation), [Authentication](#authentication)
+
+## Outbound Access
+
+Cross-tenant access controls that determine what users and groups from your tenant can do in another tenant.
+
+Related: [Cross-Tenant Access Settings](#cross-tenant-access-settings), [Inbound Access](#inbound-access), [Tenant](#tenant)
+
+## SAML
+
+Security Assertion Markup Language. A federation protocol commonly used for enterprise single sign-on and external identity provider integration.
+
+Related: [Federation](#federation), [Identity Provider](#identity-provider), [Single Sign-On](#single-sign-on)
+
+## Tenant Restrictions
+
+Controls that restrict access to specified external tenants or applications, helping organizations limit collaboration with untrusted tenants.
+
+Related: [Tenant](#tenant), [Cross-Tenant Access Settings](#cross-tenant-access-settings), [Outbound Access](#outbound-access)
+
+## WS-Fed
+
+WS-Federation. A federation protocol used in some Microsoft and enterprise identity scenarios.
+
+Related: [Federation](#federation), [Identity Provider](#identity-provider), [SAML](#saml)
