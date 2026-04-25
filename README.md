@@ -17,43 +17,43 @@ Source: Microsoft Learn official SC-300 study guide.
 
 | Section | Title | File | Status |
 |---:|---|---|---|
-| 1 | Introduction | sections/section-01-introduction.md | Empty |
-| 2 | How to setup a Practice Lab | sections/section-02-practice-lab.md | Empty |
-| 3 | Configure and manage Microsoft Entra tenant | sections/section-03-configure-manage-entra-tenant.md | Empty |
-| 4 | Create configure, and manage Microsoft Entra identities | sections/section-04-create-configure-manage-identities.md | Empty |
-| 5 | Implement and manage Identities for external users and tenants | sections/section-05-external-users-tenants.md | Empty |
-| 6 | Implement and manage hybrid identity | sections/section-06-hybrid-identity.md | Empty |
-| 7 | Plan, Implement and manage hybrid Identity | sections/section-07-hybrid-identity-management.md | Empty |
-| 8 | Plan, Implement and manage Microsoft Entra Conditional Access | sections/section-08-conditional-access.md | Empty |
-| 9 | Manage Risk by using Microsoft Entra ID Protection | sections/section-09-identity-protection.md | Empty |
-| 10 | Implement access management for Azure resources by using Azure roles | sections/section-10-azure-roles-rbac.md | Empty |
-| 11 | Implement Global Secure Access | sections/section-11-global-secure-access.md | Empty |
-| 12 | Plan and Implement identities for applications and Azure workloads | sections/section-12-apps-azure-workloads.md | Empty |
-| 13 | Plan, implement, and monitor the integration of enterprise applications | sections/section-13-enterprise-applications.md | Empty |
-| 14 | Plan and Implement App Registrations | sections/section-14-app-registrations.md | Empty |
-| 15 | Manage and monitor app access by using Microsoft Defender for Cloud Apps | sections/section-15-defender-cloud-apps.md | Empty |
-| 16 | Plan and implement entitlement management in Microsoft Entra | sections/section-16-entitlement-management.md | Empty |
-| 17 | Plan, implement, and manage access reviews in Microsoft Entra | sections/section-17-access-reviews.md | Empty |
-| 18 | Plan and Implement Privileged access (PIM) | sections/section-18-pim.md | Empty |
-| 19 | Monitor identity activity by using logs, workbooks, and reports | sections/section-19-logs-workbooks-reports.md | Empty |
+| 1 | Introduction | [sections/section-01-introduction.md](sections/section-01-introduction.md) | Draft |
+| 2 | How to setup a Practice Lab | [sections/section-02-practice-lab.md](sections/section-02-practice-lab.md) | Draft |
+| 3 | Configure and manage Microsoft Entra tenant | [sections/section-03-configure-manage-entra-tenant.md](sections/section-03-configure-manage-entra-tenant.md) | Draft |
+| 4 | Create configure, and manage Microsoft Entra identities | [sections/section-04-create-configure-manage-identities.md](sections/section-04-create-configure-manage-identities.md) | Draft |
+| 5 | Implement and manage Identities for external users and tenants | [sections/section-05-external-users-tenants.md](sections/section-05-external-users-tenants.md) | Draft |
+| 6 | Implement and manage hybrid identity | [sections/section-06-hybrid-identity.md](sections/section-06-hybrid-identity.md) | Draft |
+| 7 | Plan, Implement and manage hybrid Identity | [sections/section-07-hybrid-identity-management.md](sections/section-07-hybrid-identity-management.md) | Draft |
+| 8 | Plan, Implement and manage Microsoft Entra Conditional Access | [sections/section-08-conditional-access.md](sections/section-08-conditional-access.md) | Draft |
+| 9 | Manage Risk by using Microsoft Entra ID Protection | [sections/section-09-identity-protection.md](sections/section-09-identity-protection.md) | Draft |
+| 10 | Implement access management for Azure resources by using Azure roles | [sections/section-10-azure-roles-rbac.md](sections/section-10-azure-roles-rbac.md) | Draft |
+| 11 | Implement Global Secure Access | [sections/section-11-global-secure-access.md](sections/section-11-global-secure-access.md) | Draft |
+| 12 | Plan and Implement identities for applications and Azure workloads | [sections/section-12-apps-azure-workloads.md](sections/section-12-apps-azure-workloads.md) | Draft |
+| 13 | Plan, implement, and monitor the integration of enterprise applications | [sections/section-13-enterprise-applications.md](sections/section-13-enterprise-applications.md) | Draft |
+| 14 | Plan and Implement App Registrations | [sections/section-14-app-registrations.md](sections/section-14-app-registrations.md) | Draft |
+| 15 | Manage and monitor app access by using Microsoft Defender for Cloud Apps | [sections/section-15-defender-cloud-apps.md](sections/section-15-defender-cloud-apps.md) | Draft |
+| 16 | Plan and implement entitlement management in Microsoft Entra | [sections/section-16-entitlement-management.md](sections/section-16-entitlement-management.md) | Draft |
+| 17 | Plan, implement, and manage access reviews in Microsoft Entra | [sections/section-17-access-reviews.md](sections/section-17-access-reviews.md) | Draft |
+| 18 | Plan and Implement Privileged access (PIM) | [sections/section-18-pim.md](sections/section-18-pim.md) | Draft |
+| 19 | Monitor identity activity by using logs, workbooks, and reports | [sections/section-19-logs-workbooks-reports.md](sections/section-19-logs-workbooks-reports.md) | Draft |
 
 ## Assignments
 
 | Section | Assignment | File | Status |
 |---:|---:|---|---|
-| 3 | 1 | assignments/section-03-assignment-01-restricted-administrative-unit.md | Empty |
-| 4 | 2 | assignments/section-04-assignment-02-create-user-profile-attributes.md | Empty |
-| 4 | 3 | assignments/section-04-assignment-03-dynamic-windows-device-group.md | Empty |
-| 5 | 4 | assignments/section-05-assignment-04-external-collaboration-settings.md | Empty |
-| 6 | 5 | assignments/section-06-assignment-05-entra-connect-health-alert.md | Empty |
-| 7 | 6 | assignments/section-07-assignment-06-qr-code-mfa-conditional-access.md | Empty |
-| 7 | 7 | assignments/section-07-assignment-07-sspr-email-otp.md | Empty |
-| 8 | 8 | assignments/section-08-assignment-08-block-high-risk-android-conditional-access.md | Empty |
-| 9 | 9 | assignments/section-09-assignment-09-identity-protection-risk.md | Empty |
-| 15 | 10 | assignments/section-15-assignment-10-defender-cloud-apps-file-policy.md | Empty |
-| 16 | 11 | assignments/section-16-assignment-11-access-request-catalog-package.md | Empty |
-| 18 | 12 | assignments/section-18-assignment-12-pim-user-administrator-eligibility.md | Empty |
-| 19 | 13 | assignments/section-19-assignment-13-log-analytics-entra-diagnostic-settings.md | Empty |
+| 3 | 1 | [assignments/section-03-assignment-01-restricted-administrative-unit.md](assignments/section-03-assignment-01-restricted-administrative-unit.md) | Empty |
+| 4 | 2 | [assignments/section-04-assignment-02-create-user-profile-attributes.md](assignments/section-04-assignment-02-create-user-profile-attributes.md) | Empty |
+| 4 | 3 | [assignments/section-04-assignment-03-dynamic-windows-device-group.md](assignments/section-04-assignment-03-dynamic-windows-device-group.md) | Empty |
+| 5 | 4 | [assignments/section-05-assignment-04-external-collaboration-settings.md](assignments/section-05-assignment-04-external-collaboration-settings.md) | Empty |
+| 6 | 5 | [assignments/section-06-assignment-05-entra-connect-health-alert.md](assignments/section-06-assignment-05-entra-connect-health-alert.md) | Empty |
+| 7 | 6 | [assignments/section-07-assignment-06-qr-code-mfa-conditional-access.md](assignments/section-07-assignment-06-qr-code-mfa-conditional-access.md) | Empty |
+| 7 | 7 | [assignments/section-07-assignment-07-sspr-email-otp.md](assignments/section-07-assignment-07-sspr-email-otp.md) | Empty |
+| 8 | 8 | [assignments/section-08-assignment-08-block-high-risk-android-conditional-access.md](assignments/section-08-assignment-08-block-high-risk-android-conditional-access.md) | Empty |
+| 9 | 9 | [assignments/section-09-assignment-09-identity-protection-risk.md](assignments/section-09-assignment-09-identity-protection-risk.md) | Empty |
+| 15 | 10 | [assignments/section-15-assignment-10-defender-cloud-apps-file-policy.md](assignments/section-15-assignment-10-defender-cloud-apps-file-policy.md) | Empty |
+| 16 | 11 | [assignments/section-16-assignment-11-access-request-catalog-package.md](assignments/section-16-assignment-11-access-request-catalog-package.md) | Empty |
+| 18 | 12 | [assignments/section-18-assignment-12-pim-user-administrator-eligibility.md](assignments/section-18-assignment-12-pim-user-administrator-eligibility.md) | Empty |
+| 19 | 13 | [assignments/section-19-assignment-13-log-analytics-entra-diagnostic-settings.md](assignments/section-19-assignment-13-log-analytics-entra-diagnostic-settings.md) | Empty |
 
 ## Repository Structure
 
