@@ -619,3 +619,81 @@ Related: [OATH Token](#oath-token), [Multi-Factor Authentication](#multi-factor-
 A passwordless Windows sign-in method that uses a PIN or biometrics tied to the device and backed by asymmetric keys.
 
 Related: [Authentication](#authentication), [FIDO2](#fido2), [Authentication Strength](#authentication-strength)
+
+## Authentication Context
+
+A Conditional Access target that lets an application request policy enforcement for a specific sensitive action or area inside the app.
+
+Related: [Conditional Access](#conditional-access), [Authentication Strength](#authentication-strength)
+
+## Continuous Access Evaluation
+
+A Microsoft Entra capability that can revoke or reevaluate access more quickly when important user, session, or risk conditions change.
+
+Related: [Conditional Access](#conditional-access), [Access Token](#access-token), [Session Control](#session-control)
+
+## Emergency Access Account
+
+A highly protected break-glass administrator account used to regain tenant access if normal administrative sign-in is disrupted.
+
+Related: [Conditional Access](#conditional-access), [Least Privilege](#least-privilege), [Privileged Identity Management](#privileged-identity-management)
+
+## Grant Control
+
+The Conditional Access result that determines whether access is blocked or granted only after requirements such as MFA, compliant device, or authentication strength are satisfied.
+
+Related: [Conditional Access](#conditional-access), [Multi-Factor Authentication](#multi-factor-authentication), [Authentication Strength](#authentication-strength)
+
+## Legacy Authentication
+
+Older authentication protocols or clients that do not support modern authentication controls such as MFA and Conditional Access in the same way as modern protocols.
+
+Related: [Conditional Access](#conditional-access), [Multi-Factor Authentication](#multi-factor-authentication), [OAuth 2.0](#oauth-20)
+
+## Named Location
+
+A Conditional Access location object that represents known IP ranges or countries/regions for use in policy decisions.
+
+Related: [Conditional Access](#conditional-access), [Zero Trust](#zero-trust)
+
+## Report-Only Mode
+
+A Conditional Access policy state that logs what a policy would have done without enforcing the access decision.
+
+Related: [Conditional Access](#conditional-access), [Sign-In Logs](#sign-in-logs)
+
+## Session Control
+
+A Conditional Access control that affects the user session after access is granted, such as sign-in frequency, persistent browser behavior, or app control.
+
+Related: [Conditional Access](#conditional-access), [Continuous Access Evaluation](#continuous-access-evaluation)
+
+## Sign-In Logs
+
+Microsoft Entra logs that record sign-in activity, including authentication details, Conditional Access results, and failures.
+
+Related: [Conditional Access](#conditional-access), [Report-Only Mode](#report-only-mode), [Authentication](#authentication)
+
+## Sign-In Risk
+
+A Microsoft Entra ID Protection signal that estimates the likelihood that a specific sign-in attempt is suspicious or compromised.
+
+Related: [Identity Protection](#identity-protection), [Conditional Access](#conditional-access), [User Risk](#user-risk)
+
+## User Risk
+
+A Microsoft Entra ID Protection signal that estimates the likelihood that a user identity is compromised.
+
+Related: [Identity Protection](#identity-protection), [Conditional Access](#conditional-access), [Sign-In Risk](#sign-in-risk)
+
+## What If
+
+A Conditional Access troubleshooting tool that simulates whether policies would apply under selected user, app, device, location, and risk conditions.
+
+Related: [Conditional Access](#conditional-access), [Report-Only Mode](#report-only-mode)
+
+## Zero Trust
+
+A security model that assumes no implicit trust and continuously verifies identity, device, risk, location, and access context.
+
+Related: [Conditional Access](#conditional-access), [Authentication](#authentication), [Least Privilege](#least-privilege)
