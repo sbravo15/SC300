@@ -252,7 +252,49 @@ Related: [Entitlement Management](#entitlement-management), [Access Review](#acc
 
 Microsoft Entra ID Governance capability used to package and manage access to groups, applications, and SharePoint sites through catalogs, access packages, policies, and approvals.
 
-Related: [Identity Governance](#identity-governance), [Access Review](#access-review)
+Related: [Identity Governance](#identity-governance), [Access Review](#access-review), [Access Package](#access-package)
+
+## Access Package
+
+A policy-governed bundle of resource roles in entitlement management that can be requested, approved, assigned, expired, and reviewed as a unit.
+
+Related: [Entitlement Management](#entitlement-management), [Entitlement Catalog](#entitlement-catalog), [Access Package Policy](#access-package-policy)
+
+## Access Package Assignment
+
+The active grant that results when an identity receives an access package and its included resource roles.
+
+Related: [Access Package](#access-package), [Access Request](#access-request), [Entitlement Management](#entitlement-management)
+
+## Access Package Policy
+
+Rules on an access package that define who can request or receive access, whether approval is required, how long access lasts, and whether lifecycle controls apply.
+
+Related: [Access Package](#access-package), [Access Request](#access-request), [Entitlement Management](#entitlement-management)
+
+## Access Request
+
+A self-service or admin-driven request for an access package assignment.
+
+Related: [Access Package](#access-package), [Access Package Assignment](#access-package-assignment), [Identity Governance](#identity-governance)
+
+## Connected Organization
+
+An external organization represented in entitlement management so its users can be allowed to request access packages.
+
+Related: [External Identity](#external-identity), [B2B Collaboration](#b2b-collaboration), [Entitlement Management](#entitlement-management)
+
+## Entitlement Catalog
+
+A container in entitlement management that organizes related resources and access packages, often by project, department, or delegated ownership boundary.
+
+Related: [Access Package](#access-package), [Entitlement Management](#entitlement-management)
+
+## Terms of Use
+
+A Microsoft Entra agreement or notice that users can be required to accept through Conditional Access before accessing resources.
+
+Related: [Conditional Access](#conditional-access), [Identity Governance](#identity-governance)
 
 ## Access Review
 
