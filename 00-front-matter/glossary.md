@@ -764,6 +764,54 @@ Microsoft Entra logs that record sign-in activity, including authentication deta
 
 Related: [Conditional Access](#conditional-access), [Report-Only Mode](#report-only-mode), [Authentication](#authentication)
 
+## Audit Logs
+
+Microsoft Entra logs that record administrative and directory changes, including who performed an action, what changed, and whether it succeeded.
+
+Related: [Sign-In Logs](#sign-in-logs), [Microsoft Entra ID](#microsoft-entra-id)
+
+## Provisioning Logs
+
+Microsoft Entra logs that track automated user, group, and identity synchronization activity between connected systems.
+
+Related: [Automatic Provisioning](#automatic-provisioning), [SCIM](#scim), [Microsoft Entra ID](#microsoft-entra-id)
+
+## Diagnostic Settings
+
+Azure and Microsoft Entra configuration that routes selected logs and metrics to destinations such as Log Analytics, Storage, Event Hubs, or partner solutions.
+
+Related: [Log Analytics Workspace](#log-analytics-workspace), [Kusto Query Language](#kusto-query-language), [Event Hubs](#event-hubs)
+
+## Log Analytics Workspace
+
+An Azure Monitor workspace used to collect, store, query, and analyze log data with Kusto Query Language.
+
+Related: [Diagnostic Settings](#diagnostic-settings), [Kusto Query Language](#kusto-query-language), [Workbook](#workbook)
+
+## Event Hubs
+
+Azure event streaming service often used to send logs to external monitoring, SIEM, or analytics pipelines.
+
+Related: [Diagnostic Settings](#diagnostic-settings), [Log Analytics Workspace](#log-analytics-workspace)
+
+## Kusto Query Language
+
+Microsoft query language used to search, filter, summarize, and analyze log and telemetry data.
+
+Related: [Log Analytics Workspace](#log-analytics-workspace), [Workbook](#workbook), [Sign-In Logs](#sign-in-logs)
+
+## Workbook
+
+An interactive Azure Monitor or Microsoft Entra dashboard that combines queries, charts, parameters, text, and visual reports.
+
+Related: [Kusto Query Language](#kusto-query-language), [Log Analytics Workspace](#log-analytics-workspace)
+
+## Identity Secure Score
+
+A Microsoft Entra posture score that measures identity security configuration against Microsoft recommendations.
+
+Related: [Microsoft Entra ID](#microsoft-entra-id), [Zero Trust](#zero-trust), [Conditional Access](#conditional-access)
+
 ## Sign-In Risk
 
 A Microsoft Entra ID Protection signal that estimates the likelihood that a specific sign-in attempt is suspicious or compromised.
