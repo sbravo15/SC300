@@ -242,6 +242,36 @@ Microsoft Entra ID Governance capability for managing, approving, activating, an
 
 Related: [Role-Based Access Control](#role-based-access-control), [Identity Governance](#identity-governance)
 
+## Active Assignment
+
+A privileged role assignment that is currently usable without a separate activation step.
+
+Related: [Privileged Identity Management](#privileged-identity-management), [Eligible Assignment](#eligible-assignment)
+
+## Eligible Assignment
+
+A privileged role assignment that allows a user to activate the role when needed, usually after satisfying controls such as MFA, justification, approval, or time limits.
+
+Related: [Privileged Identity Management](#privileged-identity-management), [Active Assignment](#active-assignment), [Just-in-Time Access](#just-in-time-access)
+
+## Just-in-Time Access
+
+An access model where privileged permissions are granted only when needed and only for a limited period.
+
+Related: [Privileged Identity Management](#privileged-identity-management), [Eligible Assignment](#eligible-assignment), [Least Privilege](#least-privilege)
+
+## Privilege Bracketing
+
+A security practice that grants elevated access for a defined task or time window and removes that access afterward.
+
+Related: [Privileged Identity Management](#privileged-identity-management), [Just-in-Time Access](#just-in-time-access), [Least Privilege](#least-privilege)
+
+## Privileged Role Administrator
+
+A Microsoft Entra role used to manage role assignments and privileged access configuration without granting full Global Administrator permissions.
+
+Related: [Privileged Identity Management](#privileged-identity-management), [Least Privilege](#least-privilege)
+
 ## Identity Governance
 
 Microsoft Entra capabilities for governing access over time, including entitlement management, access reviews, lifecycle workflows, and privileged access controls.
@@ -301,6 +331,24 @@ Related: [Conditional Access](#conditional-access), [Identity Governance](#ident
 A Microsoft Entra governance process for periodically reviewing whether users, guests, or privileged identities should keep access.
 
 Related: [Identity Governance](#identity-governance), [Entitlement Management](#entitlement-management)
+
+## Auto-Apply Access Review Results
+
+An access review setting that automatically applies review decisions to the target resource when the review completes.
+
+Related: [Access Review](#access-review), [Effective Permissions](#effective-permissions)
+
+## Decision Helper
+
+An access review recommendation signal that helps reviewers decide whether access should be approved or denied.
+
+Related: [Access Review](#access-review), [Sign-In Logs](#sign-in-logs)
+
+## Multi-Stage Access Review
+
+An access review design where two or more reviewer stages make decisions sequentially.
+
+Related: [Access Review](#access-review), [Identity Governance](#identity-governance)
 
 ## Administrative Unit
 
