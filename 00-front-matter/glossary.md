@@ -697,3 +697,33 @@ Related: [Conditional Access](#conditional-access), [Report-Only Mode](#report-o
 A security model that assumes no implicit trust and continuously verifies identity, device, risk, location, and access context.
 
 Related: [Conditional Access](#conditional-access), [Authentication](#authentication), [Least Privilege](#least-privilege)
+
+## Leaked Credentials
+
+Credentials that have appeared in a known breach, dump, or threat intelligence source and may indicate that an account is compromised.
+
+Related: [Identity Protection](#identity-protection), [User Risk](#user-risk), [Authentication](#authentication)
+
+## Password Spray
+
+An attack where an adversary tries one or a few common passwords against many accounts to avoid lockout thresholds.
+
+Related: [Identity Protection](#identity-protection), [Sign-In Risk](#sign-in-risk), [Microsoft Entra ID](#microsoft-entra-id)
+
+## Risk Detection
+
+A Microsoft Entra Identity Protection signal or event that contributes to user risk or sign-in risk.
+
+Related: [Identity Protection](#identity-protection), [Risky Sign-In](#risky-sign-in), [Risky User](#risky-user)
+
+## Risky Sign-In
+
+A specific sign-in attempt that Microsoft Entra evaluates as suspicious or potentially compromised.
+
+Related: [Sign-In Risk](#sign-in-risk), [Identity Protection](#identity-protection), [Conditional Access](#conditional-access)
+
+## Risky User
+
+A user account that Microsoft Entra evaluates as potentially compromised based on risk detections and identity behavior.
+
+Related: [User Risk](#user-risk), [Identity Protection](#identity-protection), [Risk Detection](#risk-detection)
