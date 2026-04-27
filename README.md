@@ -47,7 +47,7 @@ Source: Microsoft Learn official SC-300 study guide.
 | 5 | 4 | [assignments/section-05-assignment-04-external-collaboration-settings.md](assignments/section-05-assignment-04-external-collaboration-settings.md) | Draft |
 | 6 | 5 | [assignments/section-06-assignment-05-entra-connect-health-alert.md](assignments/section-06-assignment-05-entra-connect-health-alert.md) | Empty |
 | 7 | 6 | [assignments/section-07-assignment-06-qr-code-mfa-conditional-access.md](assignments/section-07-assignment-06-qr-code-mfa-conditional-access.md) | Draft |
-| 7 | 7 | [assignments/section-07-assignment-07-sspr-email-otp.md](assignments/section-07-assignment-07-sspr-email-otp.md) | Empty |
+| 7 | 7 | [assignments/section-07-assignment-07-sspr-email-otp.md](assignments/section-07-assignment-07-sspr-email-otp.md) | Draft |
 | 8 | 8 | [assignments/section-08-assignment-08-block-high-risk-android-conditional-access.md](assignments/section-08-assignment-08-block-high-risk-android-conditional-access.md) | Empty |
 | 9 | 9 | [assignments/section-09-assignment-09-identity-protection-risk.md](assignments/section-09-assignment-09-identity-protection-risk.md) | Empty |
 | 15 | 10 | [assignments/section-15-assignment-10-defender-cloud-apps-file-policy.md](assignments/section-15-assignment-10-defender-cloud-apps-file-policy.md) | Empty |
