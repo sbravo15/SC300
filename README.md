@@ -15,27 +15,27 @@ Source: Microsoft Learn official SC-300 study guide.
 
 ## Sections
 
-| Section | Title | File | Status |
-|---:|---|---|---|
-| 1 | Introduction | [sections/section-01-introduction.md](sections/section-01-introduction.md) | Draft |
-| 2 | How to setup a Practice Lab | [sections/section-02-practice-lab.md](sections/section-02-practice-lab.md) | Draft |
-| 3 | Configure and manage Microsoft Entra tenant | [sections/section-03-configure-manage-entra-tenant.md](sections/section-03-configure-manage-entra-tenant.md) | Draft |
-| 4 | Create configure, and manage Microsoft Entra identities | [sections/section-04-create-configure-manage-identities.md](sections/section-04-create-configure-manage-identities.md) | Draft |
-| 5 | Implement and manage Identities for external users and tenants | [sections/section-05-external-users-tenants.md](sections/section-05-external-users-tenants.md) | Draft |
-| 6 | Implement and manage hybrid identity | [sections/section-06-hybrid-identity.md](sections/section-06-hybrid-identity.md) | Draft |
-| 7 | Plan, Implement and manage hybrid Identity | [sections/section-07-hybrid-identity-management.md](sections/section-07-hybrid-identity-management.md) | Draft |
-| 8 | Plan, Implement and manage Microsoft Entra Conditional Access | [sections/section-08-conditional-access.md](sections/section-08-conditional-access.md) | Draft |
-| 9 | Manage Risk by using Microsoft Entra ID Protection | [sections/section-09-identity-protection.md](sections/section-09-identity-protection.md) | Draft |
-| 10 | Implement access management for Azure resources by using Azure roles | [sections/section-10-azure-roles-rbac.md](sections/section-10-azure-roles-rbac.md) | Draft |
-| 11 | Implement Global Secure Access | [sections/section-11-global-secure-access.md](sections/section-11-global-secure-access.md) | Draft |
-| 12 | Plan and Implement identities for applications and Azure workloads | [sections/section-12-apps-azure-workloads.md](sections/section-12-apps-azure-workloads.md) | Draft |
-| 13 | Plan, implement, and monitor the integration of enterprise applications | [sections/section-13-enterprise-applications.md](sections/section-13-enterprise-applications.md) | Draft |
-| 14 | Plan and Implement App Registrations | [sections/section-14-app-registrations.md](sections/section-14-app-registrations.md) | Draft |
-| 15 | Manage and monitor app access by using Microsoft Defender for Cloud Apps | [sections/section-15-defender-cloud-apps.md](sections/section-15-defender-cloud-apps.md) | Draft |
-| 16 | Plan and implement entitlement management in Microsoft Entra | [sections/section-16-entitlement-management.md](sections/section-16-entitlement-management.md) | Draft |
-| 17 | Plan, implement, and manage access reviews in Microsoft Entra | [sections/section-17-access-reviews.md](sections/section-17-access-reviews.md) | Draft |
-| 18 | Plan and Implement Privileged access (PIM) | [sections/section-18-pim.md](sections/section-18-pim.md) | Draft |
-| 19 | Monitor identity activity by using logs, workbooks, and reports | [sections/section-19-logs-workbooks-reports.md](sections/section-19-logs-workbooks-reports.md) | Draft |
+| Section | Title | File | Pdf | Status |
+|---:|---|---|---|---|
+| 1 | Introduction | [sections/section-01-introduction.md](sections/section-01-introduction.md) |  | Draft |
+| 2 | How to setup a Practice Lab | [sections/section-02-practice-lab.md](sections/section-02-practice-lab.md) |  | Draft |
+| 3 | Configure and manage Microsoft Entra tenant | [sections/section-03-configure-manage-entra-tenant.md](sections/section-03-configure-manage-entra-tenant.md) |  | Draft |
+| 4 | Create configure, and manage Microsoft Entra identities | [sections/section-04-create-configure-manage-identities.md](sections/section-04-create-configure-manage-identities.md) |  | Draft |
+| 5 | Implement and manage Identities for external users and tenants | [sections/section-05-external-users-tenants.md](sections/section-05-external-users-tenants.md) |  | Draft |
+| 6 | Implement and manage hybrid identity | [sections/section-06-hybrid-identity.md](sections/section-06-hybrid-identity.md) |  | Draft |
+| 7 | Plan, Implement and manage hybrid Identity | [sections/section-07-hybrid-identity-management.md](sections/section-07-hybrid-identity-management.md) |  | Draft |
+| 8 | Plan, Implement and manage Microsoft Entra Conditional Access | [sections/section-08-conditional-access.md](sections/section-08-conditional-access.md) |  | Draft |
+| 9 | Manage Risk by using Microsoft Entra ID Protection | [sections/section-09-identity-protection.md](sections/section-09-identity-protection.md) |  | Draft |
+| 10 | Implement access management for Azure resources by using Azure roles | [sections/section-10-azure-roles-rbac.md](sections/section-10-azure-roles-rbac.md) |  | Draft |
+| 11 | Implement Global Secure Access | [sections/section-11-global-secure-access.md](sections/section-11-global-secure-access.md) |  | Draft |
+| 12 | Plan and Implement identities for applications and Azure workloads | [sections/section-12-apps-azure-workloads.md](sections/section-12-apps-azure-workloads.md) |  | Draft |
+| 13 | Plan, implement, and monitor the integration of enterprise applications | [sections/section-13-enterprise-applications.md](sections/section-13-enterprise-applications.md) |  | Draft |
+| 14 | Plan and Implement App Registrations | [sections/section-14-app-registrations.md](sections/section-14-app-registrations.md) |  | Draft |
+| 15 | Manage and monitor app access by using Microsoft Defender for Cloud Apps | [sections/section-15-defender-cloud-apps.md](sections/section-15-defender-cloud-apps.md) |  | Draft |
+| 16 | Plan and implement entitlement management in Microsoft Entra | [sections/section-16-entitlement-management.md](sections/section-16-entitlement-management.md) |  | Draft |
+| 17 | Plan, implement, and manage access reviews in Microsoft Entra | [sections/section-17-access-reviews.md](sections/section-17-access-reviews.md) |  | Draft |
+| 18 | Plan and Implement Privileged access (PIM) | [sections/section-18-pim.md](sections/section-18-pim.md) |  | Draft |
+| 19 | Monitor identity activity by using logs, workbooks, and reports | [sections/section-19-logs-workbooks-reports.md](sections/section-19-logs-workbooks-reports.md) |  | Draft |
 
 ## Assignments
 
