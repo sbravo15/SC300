@@ -12,7 +12,7 @@ Do not commit private tenant data, real user data, tenant IDs, object IDs, domai
 |---:|---:|---|---|
 | 3 | 1 | section-03-assignment-01-restricted-administrative-unit.md | Empty |
 | 4 | 2 | section-04-assignment-02-create-user-profile-attributes.md | Draft |
-| 4 | 3 | section-04-assignment-03-dynamic-windows-device-group.md | Empty |
+| 4 | 3 | section-04-assignment-03-dynamic-windows-device-group.md | Draft |
 | 5 | 4 | section-05-assignment-04-external-collaboration-settings.md | Empty |
 | 6 | 5 | section-06-assignment-05-entra-connect-health-alert.md | Empty |
 | 7 | 6 | section-07-assignment-06-qr-code-mfa-conditional-access.md | Empty |
