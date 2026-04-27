@@ -44,7 +44,7 @@ Source: Microsoft Learn official SC-300 study guide.
 | 3 | 1 | [assignments/section-03-assignment-01-restricted-administrative-unit.md](assignments/section-03-assignment-01-restricted-administrative-unit.md) | Empty |
 | 4 | 2 | [assignments/section-04-assignment-02-create-user-profile-attributes.md](assignments/section-04-assignment-02-create-user-profile-attributes.md) | Draft |
 | 4 | 3 | [assignments/section-04-assignment-03-dynamic-windows-device-group.md](assignments/section-04-assignment-03-dynamic-windows-device-group.md) | Draft |
-| 5 | 4 | [assignments/section-05-assignment-04-external-collaboration-settings.md](assignments/section-05-assignment-04-external-collaboration-settings.md) | Empty |
+| 5 | 4 | [assignments/section-05-assignment-04-external-collaboration-settings.md](assignments/section-05-assignment-04-external-collaboration-settings.md) | Draft |
 | 6 | 5 | [assignments/section-06-assignment-05-entra-connect-health-alert.md](assignments/section-06-assignment-05-entra-connect-health-alert.md) | Empty |
 | 7 | 6 | [assignments/section-07-assignment-06-qr-code-mfa-conditional-access.md](assignments/section-07-assignment-06-qr-code-mfa-conditional-access.md) | Empty |
 | 7 | 7 | [assignments/section-07-assignment-07-sspr-email-otp.md](assignments/section-07-assignment-07-sspr-email-otp.md) | Empty |
