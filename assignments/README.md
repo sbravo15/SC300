@@ -15,7 +15,7 @@ Do not commit private tenant data, real user data, tenant IDs, object IDs, domai
 | 4 | 3 | section-04-assignment-03-dynamic-windows-device-group.md | Draft |
 | 5 | 4 | section-05-assignment-04-external-collaboration-settings.md | Draft |
 | 6 | 5 | section-06-assignment-05-entra-connect-health-alert.md | Empty |
-| 7 | 6 | section-07-assignment-06-qr-code-mfa-conditional-access.md | Empty |
+| 7 | 6 | section-07-assignment-06-qr-code-mfa-conditional-access.md | Draft |
 | 7 | 7 | section-07-assignment-07-sspr-email-otp.md | Empty |
 | 8 | 8 | section-08-assignment-08-block-high-risk-android-conditional-access.md | Empty |
 | 9 | 9 | section-09-assignment-09-identity-protection-risk.md | Empty |
