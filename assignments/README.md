@@ -17,7 +17,7 @@ Do not commit private tenant data, real user data, tenant IDs, object IDs, domai
 | 6 | 5 | section-06-assignment-05-entra-connect-health-alert.md | Empty |
 | 7 | 6 | section-07-assignment-06-qr-code-mfa-conditional-access.md | Draft |
 | 7 | 7 | section-07-assignment-07-sspr-email-otp.md | Draft |
-| 8 | 8 | section-08-assignment-08-block-high-risk-android-conditional-access.md | Empty |
+| 8 | 8 | section-08-assignment-08-block-high-risk-android-conditional-access.md | Draft |
 | 9 | 9 | section-09-assignment-09-identity-protection-risk.md | Empty |
 | 15 | 10 | section-15-assignment-10-defender-cloud-apps-file-policy.md | Empty |
 | 16 | 11 | section-16-assignment-11-access-request-catalog-package.md | Empty |
